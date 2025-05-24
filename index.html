@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Document</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <custom-header></custom-header>
+    <hero-section></hero-section>
+    <problem-section id="problemId"></problem-section>
+    <feature-section id="featureId"></feature-section>
+    <workflow-section id="workflowId"></workflow-section>
+    <product-excellence-section id="productExcellenceId"></product-excellence-section>
+    <partner-section id="parnertId"></partner-section>
+    <feedback-section id="feedbackId"></feedback-section>
+    <service-section id="serviceId"></service-section>
+    <preview-project-section id="previewProjectId"></preview-project-section>
+    <feature-section-2 id="feature2Id"></feature-section-2>
+    <custom-footer with-margin-top="with-margin-top"></custom-footer>
+
+    <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- tooltip -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- component -->
+    <!-- <script src="js/error-handler.js"></script> -->
+    <script src="components/common/header.js"></script>
+    <script src="components/landingpage/HeroSection.js"></script>
+    <script src="components/landingpage/ProblemSection.js"></script>
+    <script src="components/landingpage/FeatureSection.js"></script>
+    <script src="components/landingpage/WorkflowSection.js"></script>
+    <script src="components/landingpage/ProductExcellenceSection.js"></script>
+    <script src="components/landingpage/PartnerSection.js"></script>
+    <script src="components/landingpage/FeedbackSection.js"></script>
+    <script src="components/landingpage/ServiceSection.js"></script>
+    <script src="components/landingpage/PreviewProjectSection.js"></script>
+    <script src="components/landingpage/FeatureSection2.js"></script>
+    <script src="components/common/footer.js"></script>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search)
+        const scrollToId = params.get('scrollTo')
+
+        if (scrollToId) {
+          setTimeout(() => {
+            const el = document.getElementById(scrollToId);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 500);
+        }
+      })
+    </script>
+  </body>
+</html>

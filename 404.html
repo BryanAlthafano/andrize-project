@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/main.css" rel="stylesheet" />
+    <title>Error</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <custom-header theme="dark"></custom-header>
+    <section class="error-container">
+      <div class="background-image-horizontal-container">
+        <img
+          class="404-img-horizontal"
+          src="assets/images/404.svg"
+          alt="404-img-horizontal"
+        />
+        <img
+          class="404-img-horizontal"
+          src="assets/images/404.svg"
+          alt="404-img-horizontal"
+        />
+        <img
+          class="404-img-horizontal"
+          src="assets/images/404.svg"
+          alt="404-img-horizontal"
+        />
+        <img
+          class="404-img-horizontal"
+          src="assets/images/404.svg"
+          alt="404-img-horizontal"
+        />
+      </div>
+      <div class="background-image-vertical-container">
+        <img
+          class="404-img-vertical"
+          src="assets/images/404-vertical.svg"
+          alt="404-img-vertical"
+        />
+        <img
+          class="404-img-vertical"
+          src="assets/images/404-vertical.svg"
+          alt="404-img-vertical"
+        />
+        <img
+          class="404-img-vertical"
+          src="assets/images/404-vertical.svg"
+          alt="404-img-vertical"
+        />
+        <img
+          class="404-img-vertical"
+          src="assets/images/404-vertical.svg"
+          alt="404-img-vertical"
+        />
+      </div>
+      <div class="content-container">
+        <div class="content">
+          <div class="title-container">
+            <p class="title">This page does not exist, don't worry</p>
+          </div>
+          <div class="button-container">
+            <button
+              class="primary-dark-btn error-button"
+              onclick="window.location.href = 'index.html'"
+            >
+              Back to the homepage
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <custom-footer></custom-footer>
+
+    <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- component -->
+    <script src="components/common/header.js"></script>
+    <script src="components/common/footer.js"></script>
+  </body>
+</html>
