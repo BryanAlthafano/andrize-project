@@ -5499,7 +5499,7 @@ body {
 
             .date-display {
               position: absolute;
-              background:red;
+              background: red;
               height: 100%;
               width: 80%;
               top: 0;
@@ -5507,15 +5507,15 @@ body {
               flex-direction: row;
               align-items: center;
 
-              padding: 16px; 
-            border-radius: 8px;
-            font-size: 20px; 
-            background: rgba(230, 230, 245, 0.7);
-            color: rgba(13, 13, 56, 0.4);
-            font-weight: 600; 
-            @media (min-width: 0px) and (max-width: 750px) {
-              font-size: 14px;
-            }
+              padding: 16px;
+              border-radius: 8px;
+              font-size: 20px;
+              background: rgba(230, 230, 245, 0.7);
+              color: rgba(13, 13, 56, 0.4);
+              font-weight: 600;
+              @media (min-width: 0px) and (max-width: 750px) {
+                font-size: 14px;
+              }
             }
 
             .date-display.active {
@@ -5557,7 +5557,7 @@ body {
                 -webkit-appearance: none;
                 appearance: none;
               }
-            } 
+            }
           }
 
           input,
@@ -5701,7 +5701,7 @@ body {
             width: 100%;
             background: transparent;
             color: rgba(13, 13, 56, 0.8);
-            font-weight: 400; 
+            font-weight: 400;
             line-height: 130%;
             @media (min-width: 0px) and (max-width: 750px) {
               font-size: 16px;
@@ -6817,6 +6817,21 @@ body {
             }
           }
 
+          .otp-input:nth-child(3) {
+            margin-right: 20px;  
+
+            @media (min-width: 0px) and (max-width: 750px) {
+              margin-right: 10px;  
+            }
+          }
+          .otp-input:nth-child(4) {
+            margin-left: 20px;  
+
+            @media (min-width: 0px) and (max-width: 750px) {
+              margin-left: 10px;  
+            }
+          }
+
           .otp-input:nth-child(1) {
             cursor: pointer;
             pointer-events: all;
@@ -6864,7 +6879,7 @@ body {
               }
 
               .color {
-                color: rgba(107, 73, 212, 0.7);
+                color: var(--main-color);
                 text-decoration: underline;
                 cursor: pointer;
               }

@@ -125,7 +125,7 @@ class VerificationEmailSection extends HTMLElement {
                                 <button class="verify-email-button primary-light-btn">Verify Email</button>
                             </div>
                             <div class="message-container">
-                                <p class="message">Didn't receive the code <span class="color">Resend</span></p>
+                                <p class="message">Didn't receive the code? <span class="color">Resend</span></p>
                             </div>
                         </div>
                     </div>
