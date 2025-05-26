@@ -48,15 +48,15 @@ class WorkflowSection extends HTMLElement {
             <div class="content">
                 <div class="left-side">
                     <video class="post-video" controls muted>
-                        <source src="https://www.youtube.com/watch?v=Q838ABWXnng" type="video/mp4">
+                        <source src="assets/videos/how-it-works-1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <video class="hire-video" controls muted>
-                        <source src="https://www.youtube.com/watch?v=Q838ABWXnng" type="video/mp4">
+                        <source src="assets/videos/how-it-works-1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <video class="vision-video" controls muted>
-                        <source src="https://www.youtube.com/watch?v=Q838ABWXnng" type="video/mp4">
+                        <source src="assets/videos/how-it-works-1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -65,7 +65,7 @@ class WorkflowSection extends HTMLElement {
                         <div class="title">Post Your Project</div>
                         <div class="description">Tell us what you need—AI, software, content, or marketing. It takes 5 minutes.</div>
                         <video class="mobile-1" controls muted>
-                            <source src="https://www.youtube.com/watch?v=Q838ABWXnng" type="video/mp4">
+                            <source src="assets/videos/how-it-works-1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -73,7 +73,7 @@ class WorkflowSection extends HTMLElement {
                         <div class="title">Hire a Manager</div>
                         <div class="description">Get custom proposals. Chat, compare, and hire the best fit.</div>
                         <video class="mobile-2" controls muted>
-                            <source src="https://www.youtube.com/watch?v=Q838ABWXnng" type="video/mp4">
+                            <source src="assets/videos/how-it-works-1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -81,7 +81,7 @@ class WorkflowSection extends HTMLElement {
                         <div class="title">Your vision delivered</div>
                         <div class="description">Your project manager builds a freelance team and delivers your vision.</div>
                         <video class="mobile-3" controls muted>
-                            <source src="https://www.youtube.com/watch?v=Q838ABWXnng" type="video/mp4">
+                            <source src="assets/videos/how-it-works-1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
