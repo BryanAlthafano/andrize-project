@@ -11,15 +11,15 @@ class Step4Section extends HTMLElement {
   }
 
   initData () {
-    ;(this.isAllowEdit = false),
-      (this.category_list = [
-        'Video Production',
-        'Web Development',
-        'Digital Marketing',
-        'Branding / Design',
-        'Al or Automation',
-        'Other'
-      ])
+    this.isAllowEdit = true
+    this.category_list = [
+      'Video Production',
+      'Web Development',
+      'Digital Marketing',
+      'Branding / Design',
+      'Al or Automation',
+      'Other'
+    ]
 
     // parse data from local storage
     this.formData = {
@@ -38,9 +38,6 @@ class Step4Section extends HTMLElement {
   }
 
   attachEvents () {
-    // edit button function
-    this.attachEventEditButton()
-
     // input change: project title
     this.attachEventProjectTitle()
 
@@ -64,6 +61,7 @@ class Step4Section extends HTMLElement {
   }
 
   attachEventEditButton () {
+    // we cancel using this function
     const editButtonElement = this.querySelector('.edit-button')
 
     // edit button click event
@@ -72,6 +70,15 @@ class Step4Section extends HTMLElement {
       this.render()
       this.attachEvents()
     })
+
+    // <div
+    //     class="edit-button ${this.isAllowEdit ? 'active' : ''}">
+    //     ${
+    //       this.isAllowEdit
+    //         ? '<div class="close-icon-class">✕</div>'
+    //         : '<img alt="edit-icon" src="assets/icons/edit-icon.svg" class="edit-icon-class" />'
+    //     }
+    // </div>
   }
 
   attachEventProjectTitle () {
@@ -215,14 +222,6 @@ class Step4Section extends HTMLElement {
         <section class="step4-section-container">
             <div class="gradient-border">
                 <div class="box">
-                    <div 
-                        class="edit-button ${this.isAllowEdit ? 'active' : ''}">
-                        ${
-                          this.isAllowEdit
-                            ? '<div class="close-icon-class">✕</div>'
-                            : '<img alt="edit-icon" src="assets/icons/edit-icon.svg" class="edit-icon-class" />'
-                        }
-                    </div>
                     <div class="top-container">
                         <div class="form-group">
                             <label>Project Title</label> 
