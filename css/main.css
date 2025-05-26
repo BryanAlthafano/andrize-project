@@ -3818,7 +3818,7 @@ body {
 
     .left-side {
       width: calc(50% - 10px);
-      @media (min-width: 0px) and (max-width: 750px) {
+      @media (min-width: 0px) and (max-width: 1024px) {
         width: 100%;
       }
 
@@ -3888,7 +3888,7 @@ body {
 
     .right-side {
       width: calc(50% - 10px);
-      @media (min-width: 0px) and (max-width: 750px) {
+      @media (min-width: 0px) and (max-width: 1024px) {
         display: none;
       }
 
