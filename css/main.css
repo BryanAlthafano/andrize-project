@@ -1752,14 +1752,14 @@ body {
 
 /* feedback section */
 .feedback-container {
-  padding: 120px 64px 0;
+  padding: 60px 64px 0;
   gap: 48px;
   border-top: solid 1px rgba(29, 25, 154, 0.13);
   display: flex;
   flex-direction: column;
   max-width: 100vw;
   @media (min-width: 0px) and (max-width: 750px) {
-    padding: 96px 20px 0;
+    padding: 48px 20px 0;
     gap: 64px;
   }
 
@@ -1980,11 +1980,11 @@ body {
 
 /* service section */
 .our-service-container {
-  padding: 120px 64px 0;
+  padding: 60px 64px 0;
   gap: 48px;
   border-top: solid 1px rgba(29, 25, 154, 0.13);
   @media (min-width: 0px) and (max-width: 750px) {
-    padding: 96px 20px 0;
+    padding: 48px 20px 0;
     gap: 64px;
   }
 
