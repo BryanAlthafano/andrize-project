@@ -63,7 +63,7 @@ class CustomFooter extends HTMLElement {
                 </div>
                 <div class="right-side">
                     <div class="service-container">
-                        <p class="heading">Our Services</p>
+                        <p class="heading">Quick Links</p>
                         <ul class="service-list">
                             <li><a href="#" data-page="index.html" data-scroll-to="workflowId">How It Works</a></li>
                             <li><a href="#" data-page="index.html" data-scroll-to="productExcellenceId">Why AndRize</a></li>
