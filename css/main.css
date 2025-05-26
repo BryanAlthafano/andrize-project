@@ -6008,8 +6008,7 @@ body {
             }
 
             label.second {
-              padding: 16px 16px 0px;
-              color: rgba(0, 0, 0, 0.7);
+              padding: 16px 16px 0px; 
             }
 
             .project-category-input-wrapper {
@@ -6065,9 +6064,13 @@ body {
                 left: 16px;
                 top: 50%;
                 transform: translateY(-50%);
-                font-weight: 600;
+                font-weight: 400;
                 font-size: 20px;
                 pointer-events: none;
+            @media (min-width: 0px) and (max-width: 750px) {
+              font-size: 14px;
+                left: 16px;
+            }
               }
 
               .prefix.hide {
@@ -6076,6 +6079,10 @@ body {
 
               .project-budget-input.add-prefix {
                 padding-left: 28px;
+            @media (min-width: 0px) and (max-width: 750px) {
+                padding-left: 26px;
+
+            }
               }
 
               .usd-icon {
@@ -6154,10 +6161,10 @@ body {
             select,
             textarea {
               background: transparent;
-              font-weight: 600;
-              color: var(--text-color-black);
+              font-weight: 400;
+              color: rgba(13, 13, 56, 0.8);
               @media (min-width: 0px) and (max-width: 750px) {
-                font-size: 16px;
+                font-size: 14px;
               }
             }
           }
