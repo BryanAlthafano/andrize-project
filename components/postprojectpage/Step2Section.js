@@ -119,6 +119,15 @@ class Step2Section extends HTMLElement {
     })
   }
 
+  formatDate (dateStr) {
+    if (!dateStr) return ''
+    const date = new Date(dateStr)
+    const day = String(date.getDate()).padStart(2, '0')
+    const month = date.toLocaleString('en-US', { month: 'short' })
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+
   getTemplate () {
     return `
         <section class="step2-section-container">
@@ -129,22 +138,40 @@ class Step2Section extends HTMLElement {
                             <label>Enter your budget</label>
                             <div class="budget-input-wrapper">
                                 <span class="prefix">$</span>
-                                <input class="budget-input project-budget-input" type="number" placeholder="(e.g. $1000)" required value="${this.formData.project_budget}" />
+                                <input class="budget-input project-budget-input" type="number" placeholder="(e.g. $1000)" required value="${
+                                  this.formData.project_budget
+                                }" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Select desired completion date</label> 
                             <div class="date-picker-wrapper">
                                 <input 
-                                class="project-date-input ${this.formData.project_completion_date !== '' ? 'active' : ''}" 
+                                class="project-date-input ${
+                                  this.formData.project_completion_date !== ''
+                                    ? 'active'
+                                    : ''
+                                }" 
                                 type="date" 
                                 placeholder="DD/MM/YYYY" 
                                 required 
-                                value="${this.formData.project_completion_date}" />
+                                value="${
+                                  this.formData.project_completion_date
+                                }" />
+
+                                <div class="date-display ${
+                                  this.formData.project_completion_date !== ''
+                                    ? 'active'
+                                    : ''
+                                }">
+                                ${this.formData.project_completion_date === '' ? 'DD/MM/YYYY' : this.formatDate(
+                                  this.formData.project_completion_date
+                                )}
+                                </div>
                                 <div class="date-icon">
                                     <img alt="date-icon" src="assets/icons/date-picker-icon.svg">
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                     <div class="bottom-container">
