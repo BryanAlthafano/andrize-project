@@ -5701,8 +5701,7 @@ body {
             width: 100%;
             background: transparent;
             color: rgba(13, 13, 56, 0.8);
-            font-weight: 400;
-            resize: none;
+            font-weight: 400; 
             line-height: 130%;
             @media (min-width: 0px) and (max-width: 750px) {
               font-size: 16px;
@@ -6191,7 +6190,6 @@ body {
             background: rgba(230, 230, 245, 0.7);
             color: rgba(13, 13, 56, 0.8);
             font-weight: 400;
-            resize: none;
             @media (min-width: 0px) and (max-width: 750px) {
               font-size: 14px;
             }
