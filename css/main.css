@@ -566,6 +566,9 @@ body {
     flex-direction: column;
     justify-conter: start;
   }
+  @media (min-width: 750px) and (max-width: 1000px) {
+    padding: 32px;
+  }
 
   .footer-container-top {
     display: flex;
@@ -590,6 +593,10 @@ body {
           width: 164px;
           height: 34.2px;
         }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          width: 180px;
+          height: auto;
+        }
       }
     }
 
@@ -601,6 +608,9 @@ body {
       @media (min-width: 0px) and (max-width: 750px) {
         width: 100%;
         flex-direction: column;
+      }
+      @media (min-width: 750px) and (max-width: 1000px) {
+        width: 60%;
       }
 
       .service-container {
