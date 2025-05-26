@@ -5485,8 +5485,7 @@ body {
 
           .date-picker-wrapper {
             position: relative;
-            display: inline-block;
-            width: 100%;
+            display: inline-block; 
 
             .date-icon {
               position: absolute;
@@ -5515,8 +5514,13 @@ body {
               z-index: 3;
             }
 
-            input {
+            input.project-date-input {
               color: rgba(13, 13, 56, 0.4);
+              @media (min-width: 0px) and (max-width: 750px) {
+                width: 100%;
+                -webkit-appearance: none;
+                appearance: none; 
+              }
             }
 
             input.active {

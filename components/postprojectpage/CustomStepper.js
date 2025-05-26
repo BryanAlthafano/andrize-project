@@ -33,6 +33,7 @@ class CustomStepper extends HTMLElement {
         // handle prev step
         this.updateStepperUI('prev')
       }
+      this.render()
     })
   }
 
@@ -100,7 +101,7 @@ class CustomStepper extends HTMLElement {
                   this.post_project?.step >= 3 ? 'active' : ''
                 }">3</div>
                 <div class="step-line ${
-                  this.post_project?.step < 2 ? 'hide' : ''
+                  this.post_project?.step <= 2 ? 'hide' : ''
                 }">
                     <div class="step-progress ${
                       this.post_project?.step > 3
@@ -113,7 +114,7 @@ class CustomStepper extends HTMLElement {
 
                 <div class="step-circle ${
                   this.post_project?.step === 4 ? 'active' : ''
-                } ${this.post_project?.step < 2 ? 'hide' : ''}">4</div>
+                } ${this.post_project?.step <= 2 ? 'hide' : ''}">4</div>
             </div>
 
             <div class="content">
