@@ -128,6 +128,14 @@ class Step2Section extends HTMLElement {
     return `${day}/${month}/${year}`
   }
 
+  getTodayDate () {
+    const today = new Date()
+    const year = today.getFullYear()
+    const month = String(today.getMonth() + 1).padStart(2, '0')
+    const day = String(today.getDate()).padStart(2, '0')
+    return `${year}-${month}-${day}`
+  }
+
   getTemplate () {
     return `
         <section class="step2-section-container">
@@ -155,18 +163,22 @@ class Step2Section extends HTMLElement {
                                 type="date" 
                                 placeholder="DD/MM/YYYY" 
                                 required 
-                                value="${
-                                  this.formData.project_completion_date
-                                }" />
+                                value="${this.formData.project_completion_date}"
+                                min="${this.getTodayDate()}"
+                                />
 
                                 <div class="date-display ${
                                   this.formData.project_completion_date !== ''
                                     ? 'active'
                                     : ''
                                 }">
-                                ${this.formData.project_completion_date === '' ? 'DD/MM/YYYY' : this.formatDate(
-                                  this.formData.project_completion_date
-                                )}
+                                ${
+                                  this.formData.project_completion_date === ''
+                                    ? 'DD/MM/YYYY'
+                                    : this.formatDate(
+                                        this.formData.project_completion_date
+                                      )
+                                }
                                 </div>
                                 <div class="date-icon">
                                     <img alt="date-icon" src="assets/icons/date-picker-icon.svg">

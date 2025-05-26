@@ -191,7 +191,7 @@ class Step4Section extends HTMLElement {
     const messageElement = this.querySelector('.message-class')
     const informationElement = this.querySelector('.information-container')
     messageElement.addEventListener('click', () => {
-       informationElement.click();
+      informationElement.click()
     })
 
     tippy('#informationId', {
@@ -200,6 +200,14 @@ class Step4Section extends HTMLElement {
       trigger: 'click',
       content: `Examples of effective descriptions <br/>Examples of effective descriptions <br/>Examples of effective descriptions <br/>Examples of effective descriptions <br/>`
     })
+  }
+
+  getTodayDate () {
+    const today = new Date()
+    const year = today.getFullYear()
+    const month = String(today.getMonth() + 1).padStart(2, '0')
+    const day = String(today.getDate()).padStart(2, '0')
+    return `${year}-${month}-${day}`
   }
 
   getTemplate () {
@@ -291,6 +299,7 @@ class Step4Section extends HTMLElement {
                                     value="${
                                       this.formData.project_completion_date
                                     }" 
+                                    min="${this.getTodayDate()}"
                                     />
                                     <div class="date-icon ${
                                       this.isAllowEdit ? 'active' : ''
