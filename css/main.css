@@ -12,6 +12,7 @@ html {
   --text-color-black: rgba(13, 13, 56, 1);
   --text-color-white: rgba(230, 230, 245, 1);
   --color-white: #ffffff;
+  --base-vw: 1440;
 }
 
 body {
@@ -810,13 +811,10 @@ body {
 
           p.title {
             font-weight: 600;
-            font-size: 56px;
+            font-size: calc((56 / var(--base-vw)) * 100vw);;
             letter-spacing: -0.5px;
             color: var(--text-color-black);
-            line-height: 100%;
-            @media (min-width: 0px) and (max-width: 750px) {
-              font-size: 30px;
-            }
+            line-height: 100%; 
 
             span {
               color: var(--main-color);
@@ -6807,7 +6805,7 @@ body {
             font-weight: 600;
             line-height: 100%;
             letter-spacing: -0.5px;
-            color: rgba(13, 13, 56, 0.5);
+            color: rgba(13, 13, 56, 0.8);
             outline: none;
             @media (min-width: 0px) and (max-width: 750px) {
               font-size: 16px;
