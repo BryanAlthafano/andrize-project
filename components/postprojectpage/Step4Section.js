@@ -299,6 +299,7 @@ class Step4Section extends HTMLElement {
                                       this.formData.project_completion_date
                                     }" 
                                     min="${this.getTodayDate()}"
+                                    onkeydown="return false;"
                                     />
                                     <div class="date-icon ${
                                       this.isAllowEdit ? 'active' : ''

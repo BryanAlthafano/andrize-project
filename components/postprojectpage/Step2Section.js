@@ -165,6 +165,7 @@ class Step2Section extends HTMLElement {
                                 required 
                                 value="${this.formData.project_completion_date}"
                                 min="${this.getTodayDate()}"
+                                onkeydown="return false;"
                                 />
 
                                 <div class="date-display ${
