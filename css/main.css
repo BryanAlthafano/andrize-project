@@ -1393,7 +1393,7 @@ body {
         width: 100%;
         height: auto;
         max-height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         border-radius: 16px; 
         @media (min-width: 0px) and (max-width: 1024px) { 
           aspect-ratio: 1 / 1;
@@ -1474,7 +1474,7 @@ body {
           @media (min-width: 0px) and (max-width: 1024px) {
             aspect-ratio: 1 / 1;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 16px;
             display: block;
             margin-top: 30px;
