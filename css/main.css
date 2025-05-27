@@ -774,7 +774,7 @@ body {
     gap: 12px;
     padding: 20px 20px 0px;
   }
-  @media (min-width: 750px) and (max-width: 1050px) {
+  @media (min-width: 750px) and (max-width: 1100px) {
     margin-top: 102px;
     flex-direction: column;
   }
@@ -784,7 +784,7 @@ body {
     @media (min-width: 0px) and (max-width: 750px) {
       width: 100%;
     }
-    @media (min-width: 750px) and (max-width: 1050px) {
+    @media (min-width: 750px) and (max-width: 1100px) {
       width: 100%;
     }
 
@@ -815,6 +815,9 @@ body {
             letter-spacing: -0.5px;
             color: var(--text-color-black);
             line-height: 100%;
+            @media (min-width: 0px) and (max-width: 750px) {
+              font-size: 32px;
+            }
 
             span {
               color: var(--main-color);
@@ -844,6 +847,16 @@ body {
           @media (min-width: 0px) and (max-width: 750px) {
             margin-top: 24px;
             flex-direction: column;
+          }
+          @media (min-width: 1100px) and (max-width: 1300px) {
+            margin-top: 80px;
+            flex-direction: column;
+          }
+
+          .post-project-btn {
+            @media (min-width: 1100px) and (max-width: 1300px) {
+              width: 100%;
+            }
           }
 
           .tutorial-button {
@@ -880,7 +893,7 @@ body {
     @media (min-width: 0px) and (max-width: 750px) {
       width: 100%;
     }
-    @media (min-width: 750px) and (max-width: 1050px) {
+    @media (min-width: 750px) and (max-width: 1100px) {
       width: 100%;
     }
     video {
@@ -954,6 +967,10 @@ body {
         padding: 28px 0px;
         justify-content: center;
       }
+      @media (min-width: 750px) and (max-width: 1000px) {
+        flex-direction: column;
+        justify-content: center;
+      }
 
       .left-side {
         width: 50%;
@@ -966,8 +983,10 @@ body {
           width: 100%;
           flex-direction: column;
         }
-        @media (min-width: 750px) and (max-width: 950px) {
-          padding-left: 2%;
+        @media (min-width: 750px) and (max-width: 1000px) {
+          padding-left: 0;
+          width: 100%;
+          flex-direction: column;
         }
 
         .icon-container {
@@ -985,6 +1004,10 @@ body {
             width: 36px;
             height: 42px;
           }
+          @media (min-width: 750px) and (max-width: 1000px) {
+            align-self: center;
+            margin-right: 0px;
+          }
 
           img.icon {
             width: 48px;
@@ -1001,10 +1024,9 @@ body {
         .title-container {
           display: flex;
           flex-direction: row;
-
-          @media (min-width: 0px) and (max-width: 750px) {
-            align-self: center;
+          @media (min-width: 0px) and (max-width: 1000px) {
             margin-top: 24px;
+            align-self: center;
           }
 
           p.title {
@@ -1016,6 +1038,9 @@ body {
             @media (min-width: 0px) and (max-width: 750px) {
               font-size: 22px;
             }
+            @media (min-width: 750px) and (max-width: 1100px) {
+              font-size: 32px;
+            }
           }
         }
       }
@@ -1025,27 +1050,22 @@ body {
         display: flex;
         flex-direction: row;
         align-content: center;
-        @media (min-width: 0px) and (max-width: 750px) {
+        @media (min-width: 0px) and (max-width: 1000px) {
           width: 100%;
           margin-top: 16px;
           justify-content: center;
-        }
-        @media (min-width: 750px) and (max-width: 950px) {
-          padding-right: 2%;
+          padding-right: 0;
         }
 
         .description-container {
           display: flex;
           flex-direction: row;
           width: 100%;
-          /* @media (min-width: 750px) and (max-width: 950px) {
-            width: 70%;
+          @media (min-width: 0px) and (max-width: 750px) {
+            justify-content: center;
           }
-          @media (min-width: 600px) and (max-width: 750px) {
-            width: 65%;
-          }*/
-          @media (min-width: 0px) and (max-width: 600px) {
-            width: 75%;
+          @media (min-width: 750px) and (max-width: 1000px) {
+            justify-content: center;
           }
 
           p.description {
@@ -1057,6 +1077,11 @@ body {
             @media (min-width: 0px) and (max-width: 750px) {
               font-size: 14px;
               text-align: center;
+              width: 75%;
+            }
+            @media (min-width: 750px) and (max-width: 1000px) {
+              text-align: center;
+              font-size: 17px;
             }
           }
         }
@@ -1078,10 +1103,12 @@ body {
     border-radius: 16px;
     display: flex;
     flex-direction: row;
-
     @media (min-width: 0px) and (max-width: 750px) {
       padding: 28px;
       flex-direction: column;
+    }
+    @media (min-width: 750px) and (max-width: 1000px) {
+      padding: 32px; 
     }
 
     .left-side {
@@ -1102,6 +1129,9 @@ body {
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 14px;
         }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 17px;
+        }
       }
 
       p.title {
@@ -1114,6 +1144,9 @@ body {
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 22px;
           width: 90%;
+        }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 28px;
         }
       }
 
@@ -1128,6 +1161,9 @@ body {
           font-size: 14px;
           letter-spacing: -0.1px;
           width: 95%;
+        }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 17px;
         }
       }
 
@@ -1156,6 +1192,9 @@ body {
         border-bottom: solid 2px rgba(245, 245, 250, 0.2);
         padding: 24px 0;
         @media (min-width: 0px) and (max-width: 750px) {
+          padding: 16px 0;
+        }
+        @media (min-width: 750px) and (max-width: 1000px) {
           padding: 16px 0;
         }
 
@@ -1196,6 +1235,9 @@ body {
             font-size: 14px;
             letter-spacing: -0.1px;
             color: rgba(245, 245, 250, 0.8);
+          }
+          @media (min-width: 750px) and (max-width: 1000px) {
+            font-size: 17px;
           }
         }
       }
@@ -1323,6 +1365,9 @@ body {
       @media (min-width: 0px) and (max-width: 750px) {
         font-size: 28px;
       }
+      @media (min-width: 750px) and (max-width: 1024px) {
+          font-size: 38px;
+        }
     }
   }
 
@@ -1393,8 +1438,11 @@ body {
           line-height: 120%;
           letter-spacing: -0.2px;
           color: var(--text-color-black);
-          @media (min-width: 0px) and (max-width: 1024px) {
+          @media (min-width: 0px) and (max-width: 750px) {
             font-size: 22px;
+          }
+          @media (min-width: 0px) and (max-width: 1024px) {
+            font-size: 30px;
             color: var(--text-color-black);
             text-align: center;
             letter-spacing: -0.2px;
@@ -1407,8 +1455,11 @@ body {
           line-height: 120%;
           letter-spacing: -0.3px;
           color: var(--text-color-black);
+          @media (min-width: 0px) and (max-width: 750px) {
+            font-size: 16px;
+          }
           @media (min-width: 0px) and (max-width: 1024px) {
-            margin-top: 16px;
+            margin-top: 18px;
             font-size: 14px;
             color: rgba(13, 13, 56, 0.8);
             text-align: center;
@@ -1417,15 +1468,18 @@ body {
         }
         video {
           display: none;
+          @media (min-width: 0px) and (max-width: 750px) {
+            margin-top: 16px; 
+          }
           @media (min-width: 0px) and (max-width: 1024px) {
             aspect-ratio: 1 / 1;
             width: 100%;
             object-fit: cover;
             border-radius: 16px;
             display: block;
-            margin-top: 16px;
+            margin-top: 30px;
             height: auto;
-          } 
+          }
         }
         video::-webkit-media-controls-panel {
           background-image: linear-gradient(
@@ -1525,6 +1579,9 @@ body {
           width: 80%;
           text-align: center;
         }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 32px;  
+        }
 
         span.color {
           color: var(--main-color);
@@ -1538,9 +1595,12 @@ body {
     width: 50%;
     gap: 20px;
     position: relative;
-
     @media (min-width: 0px) and (max-width: 750px) {
       width: 100%;
+      gap: 12px;
+    }
+    @media (min-width: 750px) and (max-width: 1000px) {
+      width: 70%;
       gap: 12px;
     }
 
@@ -1715,6 +1775,9 @@ body {
       @media (min-width: 0px) and (max-width: 750px) {
         font-size: 28px;
       }
+      @media (min-width: 750px) and (max-width: 1000px) {
+        font-size: 34px;
+      }
     }
   }
 
@@ -1774,6 +1837,9 @@ body {
         font-size: 28px;
         width: 80%;
         text-align: center;
+      }
+      @media (min-width: 750px) and (max-width: 1000px) {
+        font-size: 34px;
       }
 
       span.color {
@@ -2000,6 +2066,10 @@ body {
         width: 80%;
         text-align: center;
       }
+      @media (min-width: 750px) and (max-width: 1000px) {
+        font-size: 34px;
+        text-align: center;
+      }
 
       span.color {
         color: var(--main-color);
@@ -2013,7 +2083,7 @@ body {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    @media (min-width: 0px) and (max-width: 750px) {
+    @media (min-width: 0px) and (max-width: 1000px) {
       flex-direction: column;
       margin-top: 48px;
       gap: 12px;
@@ -2027,7 +2097,7 @@ body {
       gap: 24px;
       display: flex;
       flex-direction: column;
-      @media (min-width: 0px) and (max-width: 750px) {
+      @media (min-width: 0px) and (max-width: 1000px) {
         padding: 32px;
         gap: 16px;
         width: 100%;
@@ -2059,7 +2129,7 @@ body {
         }
 
         br {
-          @media (min-width: 0px) and (max-width: 750px) {
+          @media (min-width: 0px) and (max-width: 1000px) {
             display: none;
           }
         }
@@ -2112,6 +2182,10 @@ body {
           font-size: 28px;
           width: 95%;
         }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 34px;
+          width: 80%;
+        }
 
         span.color {
           color: var(--main-color);
@@ -2135,6 +2209,10 @@ body {
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 14px;
           width: 95%;
+        }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 17px;
+          width: 90%;
         }
         @media (min-width: 1200px) {
           width: 50%;
@@ -2455,6 +2533,9 @@ body {
       padding: 28px;
       flex-direction: column;
     }
+    @media (min-width: 750px) and (max-width: 1000px) {
+      padding: 32px; 
+    }
 
     .left-side {
       width: calc(50% - 11px);
@@ -2475,6 +2556,9 @@ body {
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 22px;
         }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 26px;
+        }
       }
 
       p.description {
@@ -2492,6 +2576,14 @@ body {
         margin-top: calc(40px - 16px);
         @media (min-width: 0px) and (max-width: 750px) {
           display: none;
+        }
+        button {
+          @media (min-width: 750px) and (max-width: 1000px) {
+          min-width: 250px;
+          .button-title {
+            font-size: 15px;
+          }
+        }
         }
       }
     }
@@ -2513,6 +2605,9 @@ body {
         border-bottom: solid 2px rgba(245, 245, 250, 0.2);
         padding: 24px 0;
         @media (min-width: 0px) and (max-width: 750px) {
+          padding: 16px 0;
+        }
+        @media (min-width: 750px) and (max-width: 1000px) {
           padding: 16px 0;
         }
 
@@ -2553,6 +2648,9 @@ body {
             font-size: 14px;
             letter-spacing: -0.1px;
             color: rgba(245, 245, 250, 0.8);
+          }
+          @media (min-width: 750px) and (max-width: 1000px) {
+            font-size: 17px;
           }
         }
       }
@@ -2803,7 +2901,7 @@ body {
         justify-content: center;
         @media (min-width: 0px) and (max-width: 750px) {
           padding: 52px 32px;
-        }
+        }  
 
         p.title {
           text-align: center;
@@ -2815,6 +2913,10 @@ body {
           width: 40%;
           @media (min-width: 0px) and (max-width: 750px) {
             font-size: 30px;
+            width: 90%;
+          }
+          @media (min-width: 750px) and (max-width: 1000px) {
+            font-size: 38px;
             width: 90%;
           }
         }
@@ -2859,6 +2961,9 @@ body {
           @media (min-width: 0px) and (max-width: 750px) {
             text-align: left;
             font-size: 28px;
+          }
+          @media (min-width: 750px) and (max-width: 1000px) { 
+            font-size: 38px;
           }
         }
       }
@@ -2966,6 +3071,9 @@ body {
         padding: 32px;
         gap: 16px;
       }
+      @media (min-width: 750px) and (max-width: 1000px) {
+      padding: 35px 25px;
+    }
 
       .title-container {
         display: flex;
@@ -2984,6 +3092,10 @@ body {
             font-size: 30px;
             width: 90%;
           }
+          @media (min-width: 750px) and (max-width: 1000px) { 
+            font-size: 38px;
+            width: 90%;
+    }
         }
       }
 
@@ -3004,6 +3116,10 @@ body {
             font-size: 14px;
             width: 90%;
           }
+          @media (min-width: 750px) and (max-width: 1000px) { 
+            font-size: 20px;
+            width: 90%;
+    }
         }
       }
     }
@@ -3250,7 +3366,7 @@ body {
     flex-direction: column;
     gap: 12px;
     padding: 20px 20px 0px;
-  }
+  } 
 
   .left-side {
     width: 50%;
@@ -3258,6 +3374,8 @@ body {
     @media (min-width: 0px) and (max-width: 750px) {
       width: 100%;
     }
+  
+
 
     .gradient-border {
       width: 100%;
@@ -3284,8 +3402,8 @@ body {
           padding: 52px 32px;
           gap: 100px;
         }
-        @media (min-width: 750px) and (max-width: 1000px) {
-          padding: 62px 42px;
+        @media (min-width: 750px) and (max-width: 850px) {
+          padding: 42px 32px;
         }
 
         .title-container {
@@ -3304,7 +3422,13 @@ body {
               font-size: 30px;
               width: 100%;
             }
-            @media (min-width: 750px) and (max-width: 1000px) {
+            @media (min-width: 750px) and (max-width: 850px) {
+              font-size: 32px; 
+        }
+            @media (min-width: 850px) and (max-width: 1000px) {
+              font-size: 33px;
+            }
+            @media (min-width: 1000px) and (max-width: 1200px) {
               font-size: 38px;
             }
 
@@ -3330,6 +3454,9 @@ body {
               font-size: 14px;
               width: 90%;
             }
+            @media (min-width: 750px) and (max-width: 850px) {
+              font-size: 18px; 
+        }
             @media (min-width: 750px) and (max-width: 1000px) {
               font-size: 22px;
             }
@@ -3785,6 +3912,7 @@ body {
           }
           @media (min-width: 750px) and (max-width: 1000px) {
             font-size: 38px;
+            width: 100%;
           }
         }
       }
@@ -3930,7 +4058,7 @@ body {
         font-size: 28px;
       }
       @media (min-width: 750px) and (max-width: 1000px) {
-        font-size: 48px;
+        font-size: 44px;
       }
     }
   }
@@ -3945,6 +4073,9 @@ body {
       flex-direction: column;
       gap: 12px;
     }
+    @media (min-width: 750px) and (max-width: 1000px) { 
+      gap: 8px;
+    }
 
     .box {
       width: calc((100% - 40px) / 3);
@@ -3956,6 +4087,10 @@ body {
       flex-direction: column;
       @media (min-width: 0px) and (max-width: 750px) {
         width: 100%;
+      }
+      @media (min-width: 750px) and (max-width: 1000px) { 
+        width: calc((100% - 16px) / 3); 
+        padding: 0 16px 26px;
       }
 
       .icon-container {
@@ -3972,7 +4107,7 @@ body {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          @media (min-width: 0px) and (max-width: 750px) {
+          @media (min-width: 0px) and (max-width: 1000px) {
             width: 80px;
             height: 44px;
           }
@@ -3980,7 +4115,7 @@ body {
           img.icon {
             width: 44px;
             height: 44px;
-            @media (min-width: 0px) and (max-width: 750px) {
+            @media (min-width: 0px) and (max-width: 1000px) {
               width: 24px;
               height: 24px;
             }
@@ -4013,6 +4148,7 @@ body {
             }
             @media (min-width: 750px) and (max-width: 1000px) {
               font-size: 28px;
+              height: 70px;
             }
           }
         }
@@ -4035,7 +4171,8 @@ body {
               width: 50%;
             }
             @media (min-width: 750px) and (max-width: 1000px) {
-              font-size: 18px;
+              font-size: 17px;
+              width: 100%;
             }
           }
         }
@@ -4069,7 +4206,7 @@ body {
         font-size: 28px;
       }
       @media (min-width: 750px) and (max-width: 1000px) {
-        font-size: 48px;
+        font-size: 44px;
       }
     }
   }
@@ -4083,6 +4220,10 @@ body {
     @media (min-width: 0px) and (max-width: 750px) {
       flex-direction: column;
       gap: 12px;
+    }
+    @media (min-width: 750px) and (max-width: 1000px) {
+      gap: 8px; 
+
     }
 
     .gradient-border {
@@ -4099,6 +4240,9 @@ body {
       @media (min-width: 0px) and (max-width: 750px) {
         width: 100%;
       }
+      @media (min-width: 750px) and (max-width: 1000px) {
+        width: calc((100% - 16px) / 3);  
+      }
 
       .box {
         height: 100%;
@@ -4109,6 +4253,10 @@ body {
         gap: 32px;
         display: flex;
         flex-direction: column;
+        @media (min-width: 750px) and (max-width: 1000px) {
+        padding: 0 20px 20px; 
+        height: 100%;
+      }
 
         .number-container {
           display: flex;
@@ -4160,8 +4308,16 @@ body {
               @media (min-width: 0px) and (max-width: 750px) {
                 font-size: 22px;
               }
-              @media (min-width: 750px) and (max-width: 1000px) {
+              @media (min-width: 750px) and (max-width: 840px) {
                 font-size: 28px;
+                height: 160px;
+              }
+              @media (min-width: 840px) and (max-width: 1000px) {
+                font-size: 28px;
+                height: 120px;
+              }
+              @media (min-width: 1000px) and (max-width: 1250px) { 
+                height: 200px;
               }
             }
           }
@@ -4185,6 +4341,9 @@ body {
     width: 50%;
     @media (min-width: 0px) and (max-width: 750px) {
       width: 100%;
+    }
+    @media (min-width: 750px) and (max-width: 1000px) {
+      width: 60%;
     }
 
     .icon-container {
@@ -4234,7 +4393,8 @@ body {
               font-size: 28px;
             }
             @media (min-width: 750px) and (max-width: 1000px) {
-              font-size: 48px;
+              font-size: 38px;
+               width: 100%;
             }
           }
         }
@@ -4256,7 +4416,8 @@ body {
               width: 80%;
             }
             @media (min-width: 750px) and (max-width: 1000px) {
-              font-size: 18px;
+              font-size: 17px;
+                width: 80%;
             }
           }
         }
@@ -4463,7 +4624,8 @@ body {
               font-size: 28px;
             }
             @media (min-width: 750px) and (max-width: 1000px) {
-              font-size: 48px;
+              font-size: 38px;
+               width: 100%;
             }
           }
         }
@@ -4485,7 +4647,8 @@ body {
               width: 80%;
             }
             @media (min-width: 750px) and (max-width: 1000px) {
-              font-size: 18px;
+              font-size: 17px;
+                width: 100%;
             }
           }
         }
@@ -4501,14 +4664,18 @@ body {
           flex-direction: row;
           justify-content: center;
           gap: 8px;
-          @media (min-width: 0px) and (max-width: 750px) {
+          @media (min-width: 0px) and (max-width: 1000px) {
             width: 100%;
           }
+          
 
           .message-post-button {
             min-width: 230px;
             @media (min-width: 0px) and (max-width: 750px) {
               min-width: 70%;
+            }
+            @media (min-width: 750px) and (max-width: 1000px) { 
+                min-width: 80%;
             }
           }
         }
@@ -4542,7 +4709,7 @@ body {
         font-size: 28px;
       }
       @media (min-width: 750px) and (max-width: 1000px) {
-        font-size: 48px;
+        font-size: 44px;
       }
     }
   }
@@ -4584,10 +4751,10 @@ body {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          @media (min-width: 0px) and (max-width: 750px) {
+          @media (min-width: 0px) and (max-width: 1000px) {
             width: 80px;
             height: 44px;
-          }
+          } 
 
           img.icon {
             width: 44px;
@@ -4595,6 +4762,10 @@ body {
             @media (min-width: 0px) and (max-width: 750px) {
               width: 24px;
               height: 24px;
+            }
+            @media (min-width: 750px) and (max-width: 1000px) {
+              width: 30px;
+              height: 30px;
             }
           }
         }
@@ -4623,8 +4794,9 @@ body {
             @media (min-width: 0px) and (max-width: 750px) {
               font-size: 22px;
             }
-            @media (min-width: 750px) and (max-width: 1000px) {
+            @media (min-width: 750px) and (max-width: 1250px) {
               font-size: 28px;
+              height: 70px;
             }
           }
         }
@@ -4646,8 +4818,10 @@ body {
               font-size: 14px;
               width: 75%;
             }
-            @media (min-width: 750px) and (max-width: 1000px) {
-              font-size: 18px;
+            @media (min-width: 750px) and (max-width: 1250px) {
+              font-size: 17px;
+              width: 75%;
+              height: 70px;
             }
           }
         }
@@ -4681,7 +4855,7 @@ body {
   justify-content: center;
   padding: 0px 64px;
   gap: 20px;
-  @media (min-width: 0px) and (max-width: 750px) {
+  @media (min-width: 0px) and (max-width: 1000px) {
     flex-direction: column-reverse;
     padding: 0px 20px;
     gap: 12px;
@@ -4689,7 +4863,7 @@ body {
 
   .left-side {
     width: calc(50% - 10px);
-    @media (min-width: 0px) and (max-width: 750px) {
+    @media (min-width: 0px) and (max-width: 1000px) {
       width: 100%;
     }
 
@@ -4847,7 +5021,7 @@ body {
   }
   .right-side {
     width: calc(50% - 10px);
-    @media (min-width: 0px) and (max-width: 750px) {
+    @media (min-width: 0px) and (max-width: 1000px) {
       width: 100%;
     }
 
@@ -6436,6 +6610,9 @@ body {
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 30px;
         }
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 44px;
+        }
       }
     }
 
@@ -6471,7 +6648,7 @@ body {
           flex-direction: row;
           flex-wrap: wrap;
           gap: 8px;
-          @media (min-width: 0px) and (max-width: 750px) {
+          @media (min-width: 0px) and (max-width: 1000px) {
             flex-direction: column;
           }
 
@@ -6484,7 +6661,7 @@ body {
             border-radius: 8px;
             background-color: rgba(236, 236, 247, 1);
             width: calc((100% - 16px) / 3);
-            @media (min-width: 0px) and (max-width: 750px) {
+            @media (min-width: 0px) and (max-width: 1000px) {
               width: 100%;
             }
 

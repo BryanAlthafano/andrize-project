@@ -55,7 +55,7 @@ class HeroSection extends HTMLElement {
                             </p>
                         </div>
                         <div class="button-container">
-                            <button class="primary-dark-button-with-effect" style="min-width: 250px">
+                            <button class="post-project-btn primary-dark-button-with-effect" style="min-width: 250px">
                                 <span class="button-title">Post your project now</span>
                                 <span class="icon-circle">➝</span>
                             </button>
