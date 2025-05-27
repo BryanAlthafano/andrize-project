@@ -244,6 +244,7 @@ class Step4Section extends HTMLElement {
                                         id="categoryInputId" 
                                         class="project-category-input" 
                                         placeholder="choose category" 
+                                        tabindex="-1"
                                         required>
                                             ${this.category_list
                                               .map((category, index) => {
@@ -300,6 +301,7 @@ class Step4Section extends HTMLElement {
                                     }" 
                                     min="${this.getTodayDate()}"
                                     onkeydown="return false;"
+                                    tabindex="-1"
                                     />
                                     <div class="date-icon ${
                                       this.isAllowEdit ? 'active' : ''
