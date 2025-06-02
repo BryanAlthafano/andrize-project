@@ -1108,7 +1108,7 @@ body {
       flex-direction: column;
     }
     @media (min-width: 750px) and (max-width: 1000px) {
-      padding: 32px; 
+      padding: 32px;
     }
 
     .left-side {
@@ -1366,8 +1366,8 @@ body {
         font-size: 28px;
       }
       @media (min-width: 750px) and (max-width: 1024px) {
-          font-size: 38px;
-        }
+        font-size: 38px;
+      }
     }
   }
 
@@ -1394,8 +1394,8 @@ body {
         height: auto;
         max-height: 100%;
         object-fit: contain;
-        border-radius: 16px; 
-        @media (min-width: 0px) and (max-width: 1024px) { 
+        border-radius: 16px;
+        @media (min-width: 0px) and (max-width: 1024px) {
           aspect-ratio: 1 / 1;
         }
       }
@@ -1469,7 +1469,7 @@ body {
         video {
           display: none;
           @media (min-width: 0px) and (max-width: 750px) {
-            margin-top: 16px; 
+            margin-top: 16px;
           }
           @media (min-width: 0px) and (max-width: 1024px) {
             aspect-ratio: 1 / 1;
@@ -1580,7 +1580,7 @@ body {
           text-align: center;
         }
         @media (min-width: 750px) and (max-width: 1000px) {
-          font-size: 32px;  
+          font-size: 32px;
         }
 
         span.color {
@@ -2534,7 +2534,7 @@ body {
       flex-direction: column;
     }
     @media (min-width: 750px) and (max-width: 1000px) {
-      padding: 32px; 
+      padding: 32px;
     }
 
     .left-side {
@@ -2579,11 +2579,11 @@ body {
         }
         button {
           @media (min-width: 750px) and (max-width: 1000px) {
-          min-width: 250px;
-          .button-title {
-            font-size: 15px;
+            min-width: 250px;
+            .button-title {
+              font-size: 15px;
+            }
           }
-        }
         }
       }
     }
@@ -2901,7 +2901,7 @@ body {
         justify-content: center;
         @media (min-width: 0px) and (max-width: 750px) {
           padding: 52px 32px;
-        }  
+        }
 
         p.title {
           text-align: center;
@@ -2962,7 +2962,7 @@ body {
             text-align: left;
             font-size: 28px;
           }
-          @media (min-width: 750px) and (max-width: 1000px) { 
+          @media (min-width: 750px) and (max-width: 1000px) {
             font-size: 38px;
           }
         }
@@ -3072,8 +3072,8 @@ body {
         gap: 16px;
       }
       @media (min-width: 750px) and (max-width: 1000px) {
-      padding: 35px 25px;
-    }
+        padding: 35px 25px;
+      }
 
       .title-container {
         display: flex;
@@ -3092,10 +3092,10 @@ body {
             font-size: 30px;
             width: 90%;
           }
-          @media (min-width: 750px) and (max-width: 1000px) { 
+          @media (min-width: 750px) and (max-width: 1000px) {
             font-size: 38px;
             width: 90%;
-    }
+          }
         }
       }
 
@@ -3116,10 +3116,10 @@ body {
             font-size: 14px;
             width: 90%;
           }
-          @media (min-width: 750px) and (max-width: 1000px) { 
+          @media (min-width: 750px) and (max-width: 1000px) {
             font-size: 20px;
             width: 90%;
-    }
+          }
         }
       }
     }
@@ -3366,7 +3366,7 @@ body {
     flex-direction: column;
     gap: 12px;
     padding: 20px 20px 0px;
-  } 
+  }
 
   .left-side {
     width: 50%;
@@ -3374,8 +3374,6 @@ body {
     @media (min-width: 0px) and (max-width: 750px) {
       width: 100%;
     }
-  
-
 
     .gradient-border {
       width: 100%;
@@ -3423,8 +3421,8 @@ body {
               width: 100%;
             }
             @media (min-width: 750px) and (max-width: 850px) {
-              font-size: 32px; 
-        }
+              font-size: 32px;
+            }
             @media (min-width: 850px) and (max-width: 1000px) {
               font-size: 33px;
             }
@@ -3455,8 +3453,8 @@ body {
               width: 90%;
             }
             @media (min-width: 750px) and (max-width: 850px) {
-              font-size: 18px; 
-        }
+              font-size: 18px;
+            }
             @media (min-width: 750px) and (max-width: 1000px) {
               font-size: 22px;
             }
@@ -4073,7 +4071,7 @@ body {
       flex-direction: column;
       gap: 12px;
     }
-    @media (min-width: 750px) and (max-width: 1000px) { 
+    @media (min-width: 750px) and (max-width: 1000px) {
       gap: 8px;
     }
 
@@ -4088,8 +4086,8 @@ body {
       @media (min-width: 0px) and (max-width: 750px) {
         width: 100%;
       }
-      @media (min-width: 750px) and (max-width: 1000px) { 
-        width: calc((100% - 16px) / 3); 
+      @media (min-width: 750px) and (max-width: 1000px) {
+        width: calc((100% - 16px) / 3);
         padding: 0 16px 26px;
       }
 
@@ -4222,8 +4220,7 @@ body {
       gap: 12px;
     }
     @media (min-width: 750px) and (max-width: 1000px) {
-      gap: 8px; 
-
+      gap: 8px;
     }
 
     .gradient-border {
@@ -4241,7 +4238,7 @@ body {
         width: 100%;
       }
       @media (min-width: 750px) and (max-width: 1000px) {
-        width: calc((100% - 16px) / 3);  
+        width: calc((100% - 16px) / 3);
       }
 
       .box {
@@ -4254,9 +4251,9 @@ body {
         display: flex;
         flex-direction: column;
         @media (min-width: 750px) and (max-width: 1000px) {
-        padding: 0 20px 20px; 
-        height: 100%;
-      }
+          padding: 0 20px 20px;
+          height: 100%;
+        }
 
         .number-container {
           display: flex;
@@ -4316,7 +4313,7 @@ body {
                 font-size: 28px;
                 height: 120px;
               }
-              @media (min-width: 1000px) and (max-width: 1250px) { 
+              @media (min-width: 1000px) and (max-width: 1250px) {
                 height: 200px;
               }
             }
@@ -4394,7 +4391,7 @@ body {
             }
             @media (min-width: 750px) and (max-width: 1000px) {
               font-size: 38px;
-               width: 100%;
+              width: 100%;
             }
           }
         }
@@ -4417,7 +4414,7 @@ body {
             }
             @media (min-width: 750px) and (max-width: 1000px) {
               font-size: 17px;
-                width: 80%;
+              width: 80%;
             }
           }
         }
@@ -4625,7 +4622,7 @@ body {
             }
             @media (min-width: 750px) and (max-width: 1000px) {
               font-size: 38px;
-               width: 100%;
+              width: 100%;
             }
           }
         }
@@ -4648,7 +4645,7 @@ body {
             }
             @media (min-width: 750px) and (max-width: 1000px) {
               font-size: 17px;
-                width: 100%;
+              width: 100%;
             }
           }
         }
@@ -4667,15 +4664,14 @@ body {
           @media (min-width: 0px) and (max-width: 1000px) {
             width: 100%;
           }
-          
 
           .message-post-button {
             min-width: 230px;
             @media (min-width: 0px) and (max-width: 750px) {
               min-width: 70%;
             }
-            @media (min-width: 750px) and (max-width: 1000px) { 
-                min-width: 80%;
+            @media (min-width: 750px) and (max-width: 1000px) {
+              min-width: 80%;
             }
           }
         }
@@ -4754,7 +4750,7 @@ body {
           @media (min-width: 0px) and (max-width: 1000px) {
             width: 80px;
             height: 44px;
-          } 
+          }
 
           img.icon {
             width: 44px;
@@ -5958,13 +5954,37 @@ body {
                 width: 100%;
               }
 
+              .text {
+                z-index: 9;
+              }
+
+              .progress-bar {
+                width: 100%;
+                background: #eee;
+                height: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+                position: absolute;
+                z-index: 1;
+              }
+
+              .progress-fill {
+                height: 100%;
+                background-color: rgb(23, 178, 28);
+                width: 0%;
+                transition: width 0.3s ease;
+                z-index: 1;
+              }
+
               .file-size {
                 font-size: 14px;
                 opacity: 0.4;
                 margin-left: 6px;
+                z-index: 9;
               }
 
               .delete-file-btn {
+                z-index: 9;
                 position: absolute;
                 right: -7px;
                 top: 0;

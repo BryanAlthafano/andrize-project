@@ -94,9 +94,17 @@ class Step3Section extends HTMLElement {
       }
 
       // save to localStorage
+      const attachmentsMeta = this.formData.project_attachments.map(f => ({
+        name: f.name,
+        size: f.size
+      }))
+
       localStorage.setItem(
         'post_project_data',
-        JSON.stringify({ ...this.formData, project_attachments: [] })
+        JSON.stringify({
+          ...this.formData,
+          project_attachments: attachmentsMeta
+        })
       )
 
       // check if user is logged in
@@ -136,7 +144,7 @@ class Step3Section extends HTMLElement {
     const messageElement = this.querySelector('.message-class')
     const informationElement = this.querySelector('.information-container')
     messageElement.addEventListener('click', () => {
-       informationElement.click();
+      informationElement.click()
     })
 
     tippy('#informationId', {
@@ -147,31 +155,33 @@ class Step3Section extends HTMLElement {
     })
   }
 
-  handleFiles = files => {
+  handleFiles = async files => {
+    const fileList = this.querySelector('#uploadedFilesContainer')
     const existingFiles = this.formData.project_attachments
     const newFiles = Array.from(files)
 
-    // combine existing and new files
-    const combined = [...existingFiles, ...newFiles]
+    const uniqueMap = new Map(existingFiles.map(f => [f.name, f]))
 
-    const uniqueMap = new Map()
-
-    // ensure unique files based on file name
-    combined.forEach(file => {
-      if (!uniqueMap.has(file.name)) {
-        uniqueMap.set(file.name, file)
+    for (const file of newFiles) {
+      if (uniqueMap.size >= 5) {
+        alert('Maximum 5 attachments are allowed.')
+        break
       }
-    })
 
-    // limit to a maximum of 5 unique files
-    const uniqueFiles = Array.from(uniqueMap.values()).slice(0, 5)
-
-    if (uniqueFiles.length > 5) {
-      alert('Maximum 5 attachments are allowed.')
+      if (!uniqueMap.has(file.name)) {
+        try {
+          const uploaded = await this.uploadFileWithProgress(file, fileList)
+          uniqueMap.set(file.name, {
+            name: uploaded.name,
+            size: uploaded.size
+          })
+        } catch (err) {
+          console.error(err)
+        }
+      }
     }
 
-    // save to formData and re-render file list
-    this.formData.project_attachments = uniqueFiles
+    this.formData.project_attachments = Array.from(uniqueMap.values())
     this.renderFileList()
   }
 
@@ -195,7 +205,7 @@ class Step3Section extends HTMLElement {
 
       // render file name, size, and a delete (✕) button
       fileEl.innerHTML = `
-      ${shortName} <span class="file-size">${sizeInKB} KB</span>
+      <p class="text">${shortName}</p> <span class="file-size">${sizeInKB} KB</span>
       <button class="delete-file-btn" title="Delete file">✕</button>
     `
 
@@ -208,6 +218,74 @@ class Step3Section extends HTMLElement {
       })
 
       fileList.appendChild(fileEl)
+    })
+  }
+
+  uploadFileWithProgress = (file, container) => {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest()
+      const formData = new FormData()
+      formData.append('file', file)
+
+      // create file-box element
+      const fileBox = document.createElement('div')
+      fileBox.className = 'file-box uploading'
+
+      const sizeInKB = (file.size / 1024).toFixed(1)
+      const shortName =
+        file.name.length > 10 ? file.name.slice(0, 10) + '...' : file.name
+
+      fileBox.innerHTML = ` 
+      <p class="text">${shortName}</p> <span class="file-size">${sizeInKB} KB</span> 
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    `
+      container.appendChild(fileBox)
+
+      // Update progress fill
+      xhr.upload.addEventListener('progress', e => {
+        if (e.lengthComputable) {
+          const percent = (e.loaded / e.total) * 100
+          const fill = fileBox.querySelector('.progress-fill')
+          fill.style.width = `${percent}%`
+        }
+      })
+
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          fileBox.querySelector('.progress-bar').remove()
+
+          // add delete button once done
+          const deleteBtn = document.createElement('button')
+          deleteBtn.className = 'delete-file-btn'
+          deleteBtn.title = 'Delete file'
+          deleteBtn.textContent = '✕'
+          deleteBtn.addEventListener('click', () => {
+            const index = this.formData.project_attachments.findIndex(
+              f => f.name === file.name
+            )
+            if (index !== -1) {
+              this.formData.project_attachments.splice(index, 1)
+              this.renderFileList()
+            }
+          })
+
+          fileBox.appendChild(deleteBtn)
+          resolve(JSON.parse(xhr.responseText))
+        } else {
+          fileBox.querySelector('.progress-fill').style.backgroundColor = 'red'
+          reject(new Error('Upload failed'))
+        }
+      }
+
+      xhr.onerror = () => {
+        fileBox.querySelector('.progress-fill').style.backgroundColor = 'red'
+        reject(new Error('Network error'))
+      }
+
+      xhr.open('POST', 'http://localhost/andRize-project/php/upload.php')
+      xhr.send(formData)
     })
   }
 
