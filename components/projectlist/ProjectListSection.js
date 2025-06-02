@@ -1,5 +1,11 @@
 class ProjectListSection extends HTMLElement {
-  connectedCallback () {
+  connectedCallback () { 
+    this.initData()
+    this.render()
+    this.attachEvents()
+  }
+
+  initData () {
     this.project_list = [
       {
         id: 1,
@@ -35,20 +41,26 @@ class ProjectListSection extends HTMLElement {
         budget: '$5,000'
       }
     ]
-
-    // tooltip configuration
-    tippy('#informationId', {
-      allowHTML: true,
-      placement: 'bottom',
-      trigger: 'click',
-      content: `Led by a tech <br/>manager and involved <br/>an AI developer and <br/>a UX designer.`
-    })
-
-    this.render()
   }
 
   render () {
     this.innerHTML = this.getTemplate()
+  }
+
+  attachEvents () {
+    // handle tooltip
+    this.attachEventTooltip()
+  }
+
+  attachEventTooltip () {
+    this.querySelectorAll('.information-container').forEach(el => {
+      tippy(el, {
+        allowHTML: true,
+        placement: 'bottom',
+        trigger: 'click',
+        content: el.dataset.tooltip
+      })
+    })
   }
 
   getTemplate () {
@@ -87,7 +99,7 @@ class ProjectListSection extends HTMLElement {
                         </div>
                         <div class="description2-container">
                             <p class="description2">4 people</p>
-                            <div id="informationId" class="information-container">
+                            <div class="information-container" data-tooltip="${project.team_description}">
                                 <p class="information">?</p>
                             </div>
                         </div>
