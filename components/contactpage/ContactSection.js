@@ -1,15 +1,47 @@
 class ContactSection extends HTMLElement {
   connectedCallback () {
+    this.initData()
     this.render()
+    this.attachEvents()
+    this.listenForChildUpdates()
+  }
+
+  initData () {
+    this.isActiveModal = false
   }
 
   render () {
     this.innerHTML = this.getTemplate()
   }
 
+  attachEvents () {
+    // button submit
+    this.attachEventSubmitButton()
+  }
+
+  listenForChildUpdates () {
+    this.addEventListener('modal-closed', e => {
+      if (e.detail === 'closed') {
+        this.isActiveModal = false
+      }
+      this.render()
+      this.attachEvents()
+    })
+  }
+
+  attachEventSubmitButton () {
+    const submitBtn = this.querySelector('.submit-button')
+    submitBtn.addEventListener('click', () => {
+      // success modal
+      this.isActiveModal = true
+      this.render()
+    })
+  }
+
   getTemplate () {
     return `
         <section class="contact-section-container spacing-beween-section">
+            ${this.isActiveModal ? '<modal-section></modal-section>' : ''}
             <div class="left-side">
                 <div class="gradient-border">
                     <div class="box">
@@ -44,6 +76,7 @@ class ContactSection extends HTMLElement {
                     </div>
                 </div>
             </div>
+
             <div class="right-side">
                 <div class="box">
                     <p class="title">General Enquiries</p>

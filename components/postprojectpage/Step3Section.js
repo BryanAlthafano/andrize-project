@@ -46,6 +46,9 @@ class Step3Section extends HTMLElement {
     const input = this.querySelector('.project-description-input')
     input.addEventListener('input', e => {
       this.formData.project_description = e.target.value
+
+      // validation
+      this.handleErrorMessage('description')
     })
   }
 
@@ -88,8 +91,9 @@ class Step3Section extends HTMLElement {
       nextBtn.classList.add('clicked')
       setTimeout(() => nextBtn.classList.remove('clicked'), 150)
 
-      if (this.formData.project_description.trim() === '') {
-        alert('Please enter a project description.')
+      // validation
+      const descriptionValid = this.handleErrorMessage('description')
+      if (descriptionValid === false) {
         return
       }
 
@@ -289,6 +293,19 @@ class Step3Section extends HTMLElement {
     })
   }
 
+  handleErrorMessage (key) {
+    if (key === 'description') {
+      // handle input description error
+      const descriptionError = this.querySelector('.description-error')
+      if (this.formData.project_description.trim() === '') {
+        descriptionError.style.display = 'block'
+        return false
+      } else {
+        descriptionError.style.display = 'none'
+      }
+    }
+  }
+
   getTemplate () {
     return `
         <section class="step3-section-container">
@@ -298,6 +315,7 @@ class Step3Section extends HTMLElement {
                         <div class="form-group">
                             <label>Write a comprehensive project description to set goals for your project.</label>
                             <textarea class="project-description-input" rows="5" placeholder="Enter project description" required>${this.formData.project_description}</textarea>
+                            <div class="error-message description-error" style="display: none;">Please enter a description to continue !</div>
                             <div class="message-container">
                                 <div id="informationId" class="information-container">
                                     <p class="information">?</p>

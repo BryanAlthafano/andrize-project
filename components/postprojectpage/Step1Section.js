@@ -48,6 +48,9 @@ class Step1Section extends HTMLElement {
     const input = this.querySelector('.project-title-input')
     input.addEventListener('input', e => {
       this.formData.project_title = e.target.value
+
+      // validation
+      this.handleErrorMessage('title')
     })
   }
 
@@ -56,6 +59,9 @@ class Step1Section extends HTMLElement {
     options.forEach(el => {
       el.addEventListener('click', () => {
         this.formData.project_cateagory = el.textContent
+        // validation
+        this.handleErrorMessage('date')
+        
         this.render()
         this.attachEvents() // re-attach after re-render
       })
@@ -64,15 +70,15 @@ class Step1Section extends HTMLElement {
 
   attachEventNextButton () {
     const nextBtn = this.querySelector('.next-step-btn')
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', e => {
+      e.preventDefault()
       nextBtn.classList.add('clicked')
       setTimeout(() => nextBtn.classList.remove('clicked'), 150)
 
-      if (this.formData.project_title.trim() === '') {
-        alert('Please enter a project title.')
-        return
-      } else if (this.formData.project_cateagory === '') {
-        alert('Please select a project category.')
+      // validation
+      const titleValid = this.handleErrorMessage('title')
+      const categoryValid = this.handleErrorMessage('category')
+      if (titleValid === false || categoryValid === false) {
         return
       }
 
@@ -90,6 +96,30 @@ class Step1Section extends HTMLElement {
     })
   }
 
+  handleErrorMessage (key) {
+    if (key === 'title') {
+      // handle input title error
+      const titleError = this.querySelector('.title-error')
+      if (this.formData.project_title.trim() === '') {
+        titleError.style.display = 'block'
+        return false
+      } else {
+        titleError.style.display = 'none'
+      }
+    }
+
+    if (key === 'category') {
+      // handle project category error
+      const categoryError = this.querySelector('.category-error')
+      if (this.formData.project_cateagory === '') {
+        categoryError.style.display = 'block'
+        return false
+      } else {
+        categoryError.style.display = 'none'
+      }
+    }
+  }
+
   getTemplate () {
     return `
         <section class="step1-section-container">
@@ -101,6 +131,7 @@ class Step1Section extends HTMLElement {
                             <input class="project-title-input" type="text" placeholder="(e.g. Build a responsive website)" required value="${
                               this.formData.project_title
                             }" />
+                            <div class="error-message title-error" style="display: none;">Please enter a project title to continue !</div>
                         </div>
                         <div class="form-group">
                             <label>Choose project category</label>
@@ -118,6 +149,7 @@ class Step1Section extends HTMLElement {
                                   })
                                   .join('')}
                             </div>
+                            <div class="error-message category-error" style="display: none;">Please choose a project category to continue !</div>
                         </div>
                     </div>
                     <div class="bottom-container">

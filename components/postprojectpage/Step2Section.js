@@ -62,6 +62,9 @@ class Step2Section extends HTMLElement {
         dollarPrefix.classList.remove('hide')
         budgetInput.classList.add('add-prefix')
       }
+
+      // validation
+      this.handleErrorMessage('budget')
     })
   }
 
@@ -80,11 +83,10 @@ class Step2Section extends HTMLElement {
       nextBtn.classList.add('clicked')
       setTimeout(() => nextBtn.classList.remove('clicked'), 150)
 
-      if (this.formData.project_budget.trim() === '') {
-        alert('Please enter a budget.')
-        return
-      } else if (this.formData.project_completion_date === '') {
-        alert('Please enter a completion date.')
+      // validation
+      const budgetValid = this.handleErrorMessage('budget')
+      const dateValid = this.handleErrorMessage('date')
+      if (budgetValid === false || dateValid === false) {
         return
       }
 
@@ -136,6 +138,30 @@ class Step2Section extends HTMLElement {
     return `${year}-${month}-${day}`
   }
 
+  handleErrorMessage (key) {
+    if (key === 'budget') {
+      // handle input budget error
+      const budgetError = this.querySelector('.budget-error')
+      if (this.formData.project_budget.trim() === '') {
+        budgetError.style.display = 'block'
+        return false
+      } else {
+        budgetError.style.display = 'none'
+      }
+    }
+
+    if (key === 'date') {
+      // handle project date error
+      const dateError = this.querySelector('.date-error')
+      if (this.formData.project_completion_date === '') {
+        dateError.style.display = 'block'
+        return false
+      } else {
+        dateError.style.display = 'none'
+      }
+    }
+  }
+
   getTemplate () {
     return `
         <section class="step2-section-container">
@@ -150,6 +176,7 @@ class Step2Section extends HTMLElement {
                                   this.formData.project_budget
                                 }" />
                             </div>
+                            <div class="error-message budget-error" style="display: none;">Please enter a budget to continue !</div>
                         </div>
                         <div class="form-group">
                             <label>Select desired completion date</label> 
@@ -186,6 +213,7 @@ class Step2Section extends HTMLElement {
                                     <img alt="date-icon" src="assets/icons/date-picker-icon.svg">
                                 </div>
                             </div> 
+                            <div class="error-message date-error" style="display: none;">Please choose a date to continue !</div>
                         </div>
                     </div>
                     <div class="bottom-container">

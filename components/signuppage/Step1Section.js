@@ -5,10 +5,13 @@ class Step1Section extends HTMLElement {
     this.initData()
     this.render()
     this.attachEvents()
+    this.listenForChildUpdates()
   }
 
   initData () {
-    this.isActiveVerification = false;
+    this.isActiveModal = false
+    this.modalContent = 'Email already registered <br/> as creator.'
+    this.isActiveVerification = false
     this.isWithEmail = false
     this.isShowPassword = false
     this.formData = {
@@ -44,6 +47,16 @@ class Step1Section extends HTMLElement {
 
     // function for signup button
     this.attachEventSignupButton()
+  }
+
+  listenForChildUpdates () {
+    this.addEventListener('modal-closed', e => {
+      if (e.detail === 'closed') {
+        this.isActiveModal = false
+      }
+      this.render()
+      this.attachEvents()
+    })
   }
 
   attachEventWithEmailButton () {
@@ -92,20 +105,44 @@ class Step1Section extends HTMLElement {
     })
   }
 
-  attachEventSignupButton() {
+  attachEventSignupButton () {
+    // sample if error signup
+    const success = false
+
     const signupBtn = this.querySelector('.signup-button')
     signupBtn.addEventListener('click', () => {
-      this.isActiveVerification = !this.isActiveVerification
-      this.render()
+      if (success) {
+        // if success next
+        this.isActiveVerification = !this.isActiveVerification
+        this.render()
+      } else {
+        // if error , show error modal (you can change the modal content/message on this.modalContent)
+        this.isActiveModal = true
+        this.render()
+      }
     })
-
   }
 
   getTemplate () {
     return `
         <section class="signup-step1-section-container">
-            ${this.isActiveVerification ? '<verification-email-section></verification-email-section>' : ''}
+            ${
+              this.isActiveModal
+                ? `<modal-section 
+                type="error" 
+                customTitle="Oops" 
+                customContent="${this.modalContent}" 
+                customButtonTitle="Try logging in"
+                ></modal-section>`
+                : ''
+            }
 
+            ${
+              this.isActiveVerification
+                ? '<verification-email-section></verification-email-section>'
+                : ''
+            }
+            
             <div class="container ${this.isActiveVerification ? 'hide' : ''}">
                 <div class="heading-container">
                     <p class="heading">One Last Step — Sign Up</p>

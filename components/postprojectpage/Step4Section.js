@@ -50,6 +50,9 @@ class Step4Section extends HTMLElement {
     // input change: project date
     this.attachEventProjectDate()
 
+    // input change: project description
+    this.attachEventProjectDescription()
+
     // button next
     this.attachEventNextButton()
 
@@ -85,7 +88,9 @@ class Step4Section extends HTMLElement {
     const input = this.querySelector('.project-title-input')
     input.addEventListener('input', e => {
       this.formData.project_title = e.target.value
-      console.log('formData', this.formData)
+
+      // validation
+      this.handleErrorMessage('title')
     })
   }
 
@@ -104,6 +109,9 @@ class Step4Section extends HTMLElement {
     selectElement.addEventListener('blur', () => {
       iconElement.classList.remove('open')
     })
+
+    // validation
+    this.handleErrorMessage('category')
   }
 
   attachEventProjectBudget () {
@@ -130,6 +138,9 @@ class Step4Section extends HTMLElement {
         dollarPrefix.classList.remove('hide')
         budgetInput.classList.add('add-prefix')
       }
+
+      // validation
+      this.handleErrorMessage('budget')
     })
   }
 
@@ -137,6 +148,19 @@ class Step4Section extends HTMLElement {
     const dateInput = this.querySelector('.project-date-input')
     dateInput.addEventListener('input', e => {
       this.formData.project_completion_date = e.target.value
+
+      // validation
+      this.handleErrorMessage('date')
+    })
+  }
+
+  attachEventProjectDescription () {
+    const input = this.querySelector('.project-description-input')
+    input.addEventListener('input', e => {
+      this.formData.project_description = e.target.value
+
+      // validation
+      this.handleErrorMessage('description')
     })
   }
 
@@ -146,20 +170,19 @@ class Step4Section extends HTMLElement {
       nextBtn.classList.add('clicked')
       setTimeout(() => nextBtn.classList.remove('clicked'), 150)
 
-      if (this.formData.project_title.trim() === '') {
-        alert('Please enter a project title.')
-        return
-      } else if (this.formData.project_cateagory === '') {
-        alert('Please select a project category.')
-        return
-      } else if (this.formData.project_budget.trim() === '') {
-        alert('Please enter a budget.')
-        return
-      } else if (this.formData.project_completion_date === '') {
-        alert('Please enter a completion date.')
-        return
-      } else if (this.formData.project_description.trim() === '') {
-        alert('Please enter a project description.')
+      // validation
+      const titleValid = this.handleErrorMessage('title')
+      const categoryValid = this.handleErrorMessage('category')
+      const budgetValid = this.handleErrorMessage('budget')
+      const dateValid = this.handleErrorMessage('date')
+      const descriptionValid = this.handleErrorMessage('description')
+      if (
+        titleValid === false ||
+        categoryValid === false ||
+        budgetValid === false ||
+        dateValid === false ||
+        descriptionValid === false
+      ) {
         return
       }
 
@@ -217,6 +240,63 @@ class Step4Section extends HTMLElement {
     return `${year}-${month}-${day}`
   }
 
+  handleErrorMessage (key) {
+    if (key === 'title') {
+      // handle input title error
+      const titleError = this.querySelector('.title-error')
+      if (this.formData.project_title.trim() === '') {
+        titleError.style.display = 'block'
+        return false
+      } else {
+        titleError.style.display = 'none'
+      }
+    }
+
+    if (key === 'category') {
+      // handle project category error
+      const categoryError = this.querySelector('.category-error')
+      if (this.formData.project_cateagory === '') {
+        categoryError.style.display = 'block'
+        return false
+      } else {
+        categoryError.style.display = 'none'
+      }
+    }
+
+    if (key === 'budget') {
+      // handle input budget error
+      const budgetError = this.querySelector('.budget-error')
+      if (this.formData.project_budget.trim() === '') {
+        budgetError.style.display = 'block'
+        return false
+      } else {
+        budgetError.style.display = 'none'
+      }
+    }
+
+    if (key === 'date') {
+      // handle project date error
+      const dateError = this.querySelector('.date-error')
+      if (this.formData.project_completion_date === '') {
+        dateError.style.display = 'block'
+        return false
+      } else {
+        dateError.style.display = 'none'
+      }
+    }
+
+    if (key === 'description') {
+      // handle input description error
+      const descriptionError = this.querySelector('.description-error')
+      if (this.formData.project_description.trim() === '') {
+        descriptionError.style.display = 'block'
+        return false
+      } else {
+        descriptionError.style.display = 'none'
+      }
+    }
+  }
+
   getTemplate () {
     return `
         <section class="step4-section-container">
@@ -232,6 +312,7 @@ class Step4Section extends HTMLElement {
                                 }" 
                                 type="text" placeholder="(e.g. Build a responsive website)" required 
                                 value="${this.formData.project_title}" /> 
+                            <div class="error-message title-error" style="display: none;">Please enter a project title to continue !</div>
                         </div>
                         <div class="form-second-container">
                             <div class="form-group second ${
@@ -264,6 +345,7 @@ class Step4Section extends HTMLElement {
                                         <img alt="chev-icon" src="assets/icons/chevron-down-icon.svg" class="chevron-icon-class" />
                                     </div>
                                 </div>
+                                <div class="error-message category-error" style="display: none;">Please choose a project category to continue !</div>
                             </div>
                             
                             <div class="form-group second 
@@ -284,6 +366,7 @@ class Step4Section extends HTMLElement {
                                         <img alt="chev-icon" src="assets/icons/usd-icon.svg" class="usd-icon-class" />
                                     </div>
                                 </div>
+                                <div class="error-message budget-error" style="position: absolute; bottom: -21px; display: none;">Please enter a budget to continue !</div>
                             </div>
 
                             <div class="form-group second 
@@ -309,6 +392,7 @@ class Step4Section extends HTMLElement {
                                         <img alt="date-icon" src="assets/icons/date-picker-icon.svg">
                                     </div>
                                 </div>
+                                <div class="error-message date-error" style="position: absolute; bottom: -21px; display: none;">Please choose a date to continue !</div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -317,11 +401,12 @@ class Step4Section extends HTMLElement {
                             ${this.isAllowEdit ? '' : 'disabled'}
                             rows="5" 
                             placeholder="Enter project description" 
-                            required 
-                            class="${
+                            required
+                            class="project-description-input ${
                               this.isAllowEdit ? '' : 'disabled'
                             }"                            
                             >${this.formData.project_description}</textarea>
+                            <div class="error-message description-error" style="display: none;">Please enter a description to continue !</div>
                             <div class="message-container">
                                 <div id="informationId" class="information-container">
                                     <p class="information">?</p>
