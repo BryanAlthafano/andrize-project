@@ -7030,6 +7030,17 @@ body.modal-open {
                 }
               }
             }
+
+            .error-message {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 130%;
+            letter-spacing: -0.3px;
+            color: #ff3d3d;
+            @media (min-width: 0px) and (max-width: 750px) {
+              font-size: 14px;
+            }
+          }
           }
 
           .form-name-container {

@@ -72,6 +72,9 @@ class Step1Section extends HTMLElement {
     const inputElement = this.querySelector('.firstname-input')
     inputElement.addEventListener('input', e => {
       this.formData.firstname = e.target.value
+      
+      // validation
+      this.handleErrorMessage('firstname')
     })
   }
 
@@ -79,6 +82,9 @@ class Step1Section extends HTMLElement {
     const inputElement = this.querySelector('.lastname-input')
     inputElement.addEventListener('input', e => {
       this.formData.lastname = e.target.value
+
+      // validation
+      this.handleErrorMessage('lastname')
     })
   }
 
@@ -86,6 +92,9 @@ class Step1Section extends HTMLElement {
     const inputElement = this.querySelector('.email-input')
     inputElement.addEventListener('input', e => {
       this.formData.email = e.target.value
+
+      // validation
+      this.handleErrorMessage('email')
     })
   }
 
@@ -93,6 +102,9 @@ class Step1Section extends HTMLElement {
     const inputElement = this.querySelector('.password-input')
     inputElement.addEventListener('input', e => {
       this.formData.password = e.target.value
+
+      // validation
+      this.handleErrorMessage('password')
     })
   }
 
@@ -106,11 +118,25 @@ class Step1Section extends HTMLElement {
   }
 
   attachEventSignupButton () {
-    // sample if error signup
-    const success = false
-
     const signupBtn = this.querySelector('.signup-button')
+
     signupBtn.addEventListener('click', () => {
+      // validation
+      const firstnameValid = this.handleErrorMessage('firstname')
+      const lastnameValid = this.handleErrorMessage('lastname')
+      const emailValid = this.handleErrorMessage('email')
+      const passwordValid = this.handleErrorMessage('password')
+      if (
+        firstnameValid === false ||
+        lastnameValid === false ||
+        emailValid === false ||
+        passwordValid === false
+      ) {
+        return
+      }
+
+      // sample if error signup
+      const success = false
       if (success) {
         // if success next
         this.isActiveVerification = !this.isActiveVerification
@@ -121,6 +147,53 @@ class Step1Section extends HTMLElement {
         this.render()
       }
     })
+  }
+
+  handleErrorMessage (key) {
+    if (key === 'firstname') {
+      // handle input firstname error
+      const firstnameError = this.querySelector('.firstname-error')
+      if (this.formData.firstname.trim() === '') {
+        firstnameError.style.display = 'block'
+        return false
+      } else {
+        firstnameError.style.display = 'none'
+      }
+    }
+
+    if (key === 'lastname') {
+      // handle input lastname error
+      const lastnameError = this.querySelector('.lastname-error')
+      if (this.formData.lastname.trim() === '') {
+        lastnameError.style.display = 'block'
+        return false
+      } else {
+        lastnameError.style.display = 'none'
+      }
+    }
+
+    if (key === 'email') {
+      // handle input email error
+      const emailError = this.querySelector('.email-error')
+      const emailValue = this.formData.email.trim();
+      if (this.formData.email.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) { 
+        emailError.style.display = 'block'
+        return false
+      } else {
+        emailError.style.display = 'none'
+      }
+    } 
+
+    if (key === 'password') {
+      // handle input password error
+      const passwordError = this.querySelector('.password-error')
+      if (this.formData.password === '') {
+        passwordError.style.display = 'block'
+        return false
+      } else {
+        passwordError.style.display = 'none'
+      }
+    }
   }
 
   getTemplate () {
@@ -187,6 +260,7 @@ class Step1Section extends HTMLElement {
                                     placeholder="Enter your first name" 
                                     required 
                                     value="${this.formData.firstname}" />
+                                    <div class="error-message firstname-error" style="display: none;">Please enter a firstname to continue !</div>
                                 </div>
                                 <div class="form-group">
                                     <label>Last name</label> 
@@ -196,6 +270,7 @@ class Step1Section extends HTMLElement {
                                     placeholder="Enter your Last name" 
                                     required 
                                     value="${this.formData.lastname}" />
+                                    <div class="error-message lastname-error" style="display: none;">Please enter a lastname to continue !</div>
                                 </div>
                             </div>
 
@@ -207,6 +282,7 @@ class Step1Section extends HTMLElement {
                                 placeholder="Enter your email" 
                                 required 
                                 value="${this.formData.email}" />
+                                <div class="error-message email-error" style="display: none;">Please enter a valid email to continue !</div>
                             </div>
 
                             <div class="form-group">
@@ -237,6 +313,7 @@ class Step1Section extends HTMLElement {
                                         </svg>
                                     </div>
                                 </div>
+                                <div class="error-message password-error" style="display: none;">Please enter a password to continue !</div>
                             </div>
 
                             <div class="signup-button-container">
