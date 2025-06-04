@@ -131,7 +131,7 @@ class Step1Section extends HTMLElement {
                             <input class="project-title-input" type="text" placeholder="(e.g. Build a responsive website)" required value="${
                               this.formData.project_title
                             }" />
-                            <div class="error-message title-error" style="display: none;">Please enter a project title to continue !</div>
+                            <div class="error-message title-error" style="display: none;">Please enter a project title to continue.</div>
                         </div>
                         <div class="form-group">
                             <label>Choose project category</label>
@@ -149,7 +149,7 @@ class Step1Section extends HTMLElement {
                                   })
                                   .join('')}
                             </div>
-                            <div class="error-message category-error" style="display: none;">Please choose a project category to continue !</div>
+                            <div class="error-message category-error" style="display: none;">Please choose a project category to continue.</div>
                         </div>
                     </div>
                     <div class="bottom-container">

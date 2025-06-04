@@ -260,7 +260,7 @@ class Step1Section extends HTMLElement {
                                     placeholder="Enter your first name" 
                                     required 
                                     value="${this.formData.firstname}" />
-                                    <div class="error-message firstname-error" style="display: none;">Please enter a firstname to continue !</div>
+                                    <div class="error-message firstname-error" style="display: none;">Please enter a firstname to continue.</div>
                                 </div>
                                 <div class="form-group">
                                     <label>Last name</label> 
@@ -270,7 +270,7 @@ class Step1Section extends HTMLElement {
                                     placeholder="Enter your Last name" 
                                     required 
                                     value="${this.formData.lastname}" />
-                                    <div class="error-message lastname-error" style="display: none;">Please enter a lastname to continue !</div>
+                                    <div class="error-message lastname-error" style="display: none;">Please enter a lastname to continue.</div>
                                 </div>
                             </div>
 
@@ -282,7 +282,7 @@ class Step1Section extends HTMLElement {
                                 placeholder="Enter your email" 
                                 required 
                                 value="${this.formData.email}" />
-                                <div class="error-message email-error" style="display: none;">Please enter a valid email to continue !</div>
+                                <div class="error-message email-error" style="display: none;">Please enter a valid email to continue.</div>
                             </div>
 
                             <div class="form-group">
@@ -313,7 +313,7 @@ class Step1Section extends HTMLElement {
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="error-message password-error" style="display: none;">Please enter a password to continue !</div>
+                                <div class="error-message password-error" style="display: none;">Please enter a password to continue.</div>
                             </div>
 
                             <div class="signup-button-container">

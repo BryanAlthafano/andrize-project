@@ -315,7 +315,7 @@ class Step3Section extends HTMLElement {
                         <div class="form-group">
                             <label>Write a comprehensive project description to set goals for your project.</label>
                             <textarea class="project-description-input" rows="5" placeholder="Enter project description" required>${this.formData.project_description}</textarea>
-                            <div class="error-message description-error" style="display: none;">Please enter a description to continue !</div>
+                            <div class="error-message description-error" style="display: none;">Please enter a description to continue.</div>
                             <div class="message-container">
                                 <div id="informationId" class="information-container">
                                     <p class="information">?</p>

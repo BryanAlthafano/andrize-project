@@ -176,7 +176,7 @@ class Step2Section extends HTMLElement {
                                   this.formData.project_budget
                                 }" />
                             </div>
-                            <div class="error-message budget-error" style="display: none;">Please enter a budget to continue !</div>
+                            <div class="error-message budget-error" style="display: none;">Please enter a budget to continue.</div>
                         </div>
                         <div class="form-group">
                             <label>Select desired completion date</label> 
@@ -213,7 +213,7 @@ class Step2Section extends HTMLElement {
                                     <img alt="date-icon" src="assets/icons/date-picker-icon.svg">
                                 </div>
                             </div> 
-                            <div class="error-message date-error" style="display: none;">Please choose a date to continue !</div>
+                            <div class="error-message date-error" style="display: none;">Please choose a date to continue.</div>
                         </div>
                     </div>
                     <div class="bottom-container">

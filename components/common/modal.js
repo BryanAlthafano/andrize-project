@@ -27,7 +27,7 @@ class ModalSection extends HTMLElement {
     return this.getAttribute('type') || 'success'
   }
   get modalTitle () {
-    return this.getAttribute('customTitle') || 'successfully'
+    return this.getAttribute('customTitle') || ''
   }
   get modalContent () {
     return (

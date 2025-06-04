@@ -312,7 +312,7 @@ class Step4Section extends HTMLElement {
                                 }" 
                                 type="text" placeholder="(e.g. Build a responsive website)" required 
                                 value="${this.formData.project_title}" /> 
-                            <div class="error-message title-error" style="display: none;">Please enter a project title to continue !</div>
+                            <div class="error-message title-error" style="display: none;">Please enter a project title to continue.</div>
                         </div>
                         <div class="form-second-container">
                             <div class="form-group second ${
@@ -345,7 +345,7 @@ class Step4Section extends HTMLElement {
                                         <img alt="chev-icon" src="assets/icons/chevron-down-icon.svg" class="chevron-icon-class" />
                                     </div>
                                 </div>
-                                <div class="error-message category-error" style="display: none;">Please choose a project category to continue !</div>
+                                <div class="error-message category-error" style="display: none;">Please choose a project category to continue.</div>
                             </div>
                             
                             <div class="form-group second 
@@ -366,7 +366,7 @@ class Step4Section extends HTMLElement {
                                         <img alt="chev-icon" src="assets/icons/usd-icon.svg" class="usd-icon-class" />
                                     </div>
                                 </div>
-                                <div class="error-message budget-error" style="position: absolute; bottom: -21px; display: none;">Please enter a budget to continue !</div>
+                                <div class="error-message budget-error" style="position: absolute; bottom: -21px; display: none;">Please enter a budget to continue.</div>
                             </div>
 
                             <div class="form-group second 
@@ -392,7 +392,7 @@ class Step4Section extends HTMLElement {
                                         <img alt="date-icon" src="assets/icons/date-picker-icon.svg">
                                     </div>
                                 </div>
-                                <div class="error-message date-error" style="position: absolute; bottom: -21px; display: none;">Please choose a date to continue !</div>
+                                <div class="error-message date-error" style="position: absolute; bottom: -21px; display: none;">Please choose a date to continue.</div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -406,7 +406,7 @@ class Step4Section extends HTMLElement {
                               this.isAllowEdit ? '' : 'disabled'
                             }"                            
                             >${this.formData.project_description}</textarea>
-                            <div class="error-message description-error" style="display: none;">Please enter a description to continue !</div>
+                            <div class="error-message description-error" style="display: none;">Please enter a description to continue.</div>
                             <div class="message-container">
                                 <div id="informationId" class="information-container">
                                     <p class="information">?</p>
