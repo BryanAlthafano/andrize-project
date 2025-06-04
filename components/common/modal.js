@@ -67,7 +67,7 @@ class ModalSection extends HTMLElement {
   getTemplate () {
     return `
         <div class="modal-container">
-            <div class="box ${this.modalType}">
+            <div class="box">
                 <div class="icon-container ${this.modalWithIcon === 'true' ? '' : 'hide'}">
                     <img 
                     alt="icon" 
@@ -79,7 +79,7 @@ class ModalSection extends HTMLElement {
                     class="icon">
                 </div>
                 <div class="content">
-                    <div class="title-container">
+                    <div class="title-container ${this.modalTitle === '' ? 'hide' : ''}">
                       <p class="title ${this.modalType}">${this.modalTitle}</p>
                     </div>
                     <div class="description-container">
