@@ -136,7 +136,7 @@ class Step1Section extends HTMLElement {
       }
 
       // sample if error signup
-      const success = false
+      const success = true // this is just dummy
       if (success) {
         // if success next
         this.isActiveVerification = !this.isActiveVerification
