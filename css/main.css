@@ -25,7 +25,7 @@ body {
 
 body.modal-open {
   overflow: hidden;
-  touch-action: none; 
+  touch-action: none;
 }
 
 /*  ============== common ============== */
@@ -382,7 +382,6 @@ body.modal-open {
       width: 70%;
     }
 
-
     .icon-container {
       display: flex;
       flex-direction: row;
@@ -423,7 +422,7 @@ body.modal-open {
         }
 
         p.title.success {
-          color: rgba(23, 135, 96, 1)
+          color: rgba(23, 135, 96, 1);
         }
       }
 
@@ -477,10 +476,10 @@ body.modal-open {
     }
   }
   .box.error {
-    border-color: rgba(255, 61, 61, 0.8)
+    border-color: rgba(255, 61, 61, 0.8);
   }
   .box.success {
-    border-color: rgba(23, 135, 96, 0.8)
+    border-color: rgba(23, 135, 96, 0.8);
   }
 }
 
@@ -6592,6 +6591,120 @@ body.modal-open {
             }
           }
 
+          .attachments-container {
+            border: dashed 2px rgba(13, 13, 56, 0.2);
+            border-radius: 16px;
+            padding: 10px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            height: 100px;
+
+            p.title {
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 130%;
+              letter-spacing: -0.3px;
+              color: rgba(13, 13, 56, 0.6);
+
+              .color {
+                color: var(--main-color);
+              }
+            }
+
+            p.description {
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 130%;
+              letter-spacing: -0.3px;
+              color: var(--text-color-black);
+              opacity: 0.6;
+            }
+          }
+
+          .uploaded-files {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            .file-box {
+              position: relative;
+              border: dashed 2px rgba(13, 13, 56, 0.2);
+              border-radius: 8px;
+              padding: 10px 24px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 40px;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 130%;
+              letter-spacing: -0.3px;
+              color: var(--text-color-black);
+              opacity: 0.6;
+              text-align: left;
+              @media (min-width: 0px) and (max-width: 750px) {
+                width: 100%;
+              }
+
+              .text {
+                z-index: 9;
+              }
+
+              .progress-bar {
+                width: 100%;
+                background: #eee;
+                height: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+                position: absolute;
+                z-index: 1;
+              }
+
+              .progress-fill {
+                height: 100%;
+                background-color: rgba(107, 73, 212, 0.2);
+                width: 0%;
+                transition: width 0.3s ease;
+                z-index: 1;
+              }
+
+              .file-size {
+                font-size: 14px;
+                opacity: 0.4;
+                margin-left: 6px;
+                z-index: 9;
+              }
+
+              .delete-file-btn {
+                z-index: 9;
+                position: absolute;
+                right: -7px;
+                top: 0;
+                transform: translateY(-50%);
+                background: rgba(13, 13, 56, 0.8);
+                border: none;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 400;
+                border-radius: 999px;
+                width: 20px;
+                height: 20px;
+                color: var(--color-white);
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+
           .error-message {
             font-weight: 600;
             font-size: 16px;
@@ -7035,15 +7148,15 @@ body.modal-open {
             }
 
             .error-message {
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 130%;
-            letter-spacing: -0.3px;
-            color: #ff3d3d;
-            @media (min-width: 0px) and (max-width: 750px) {
-              font-size: 14px;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 130%;
+              letter-spacing: -0.3px;
+              color: #ff3d3d;
+              @media (min-width: 0px) and (max-width: 750px) {
+                font-size: 14px;
+              }
             }
-          }
           }
 
           .form-name-container {

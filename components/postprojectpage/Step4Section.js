@@ -53,6 +53,9 @@ class Step4Section extends HTMLElement {
     // input change: project description
     this.attachEventProjectDescription()
 
+    // input change: project attachments
+    this.attachEventProjectFiles()
+
     // button next
     this.attachEventNextButton()
 
@@ -164,6 +167,39 @@ class Step4Section extends HTMLElement {
     })
   }
 
+  attachEventProjectFiles () {
+    const dropArea = this.querySelector('#dropArea')
+    const fileInput = this.querySelector('#fileInput')
+
+    // click open the file
+    dropArea.addEventListener('click', () => fileInput.click())
+
+    // input file manually
+    fileInput.addEventListener('change', e => {
+      this.handleFiles(e.target.files)
+    })
+
+    // drag over
+    dropArea.addEventListener('dragover', e => {
+      e.preventDefault()
+      dropArea.classList.add('dragover')
+    })
+
+    // drag leave
+    dropArea.addEventListener('dragleave', () => {
+      dropArea.classList.remove('dragover')
+    })
+
+    // drop file
+    dropArea.addEventListener('drop', e => {
+      e.preventDefault()
+      dropArea.classList.remove('dragover')
+      this.handleFiles(e.dataTransfer.files)
+    })
+
+    this.renderFileList()
+  }
+
   attachEventNextButton () {
     const nextBtn = this.querySelector('.next-step-btn')
     nextBtn.addEventListener('click', () => {
@@ -229,6 +265,141 @@ class Step4Section extends HTMLElement {
       placement: 'bottom-start',
       trigger: 'click',
       content: `Examples of effective descriptions <br/>Examples of effective descriptions <br/>Examples of effective descriptions <br/>Examples of effective descriptions <br/>`
+    })
+  }
+
+  handleFiles = async files => {
+    const fileList = this.querySelector('#uploadedFilesContainer')
+    const existingFiles = this.formData.project_attachments
+    const newFiles = Array.from(files)
+
+    const uniqueMap = new Map(existingFiles.map(f => [f.name, f]))
+
+    for (const file of newFiles) {
+      if (uniqueMap.size >= 5) {
+        alert('Maximum 5 attachments are allowed.')
+        break
+      }
+
+      if (!uniqueMap.has(file.name)) {
+        try {
+          const uploaded = await this.uploadFileWithProgress(file, fileList)
+          uniqueMap.set(file.name, {
+            id: uploaded.id,
+            name: uploaded.name,
+            size: uploaded.size
+          })
+        } catch (err) {
+          console.error(err)
+        }
+      }
+    }
+
+    this.formData.project_attachments = Array.from(uniqueMap.values())
+    this.renderFileList()
+  }
+
+  renderFileList = () => {
+    const fileList = this.querySelector('#uploadedFilesContainer')
+    fileList.innerHTML = ''
+
+    this.formData.project_attachments.forEach((file, index) => {
+      const fileEl = document.createElement('div')
+      fileEl.className = 'file-box'
+
+      // shorten the file name if it's too long
+      const originalName = file.name
+      const maxLength = 10
+      const shortName =
+        originalName.length > maxLength
+          ? originalName.slice(0, maxLength) + '...'
+          : originalName
+
+      const sizeInKB = (file.size / 1024).toFixed(1)
+
+      // render file name, size, and a delete (✕) button
+      fileEl.innerHTML = `
+      <p class="text">${shortName}</p> <span class="file-size">${sizeInKB} KB</span>
+      <button class="delete-file-btn" title="Delete file">✕</button>
+    `
+
+      // delete the file when ✕ button is clicked
+      fileEl.querySelector('.delete-file-btn').addEventListener('click', () => {
+        // remove file from the array by index
+        this.formData.project_attachments.splice(index, 1)
+        // re-render the updated file list
+        this.renderFileList()
+      })
+
+      fileList.appendChild(fileEl)
+    })
+  }
+
+  uploadFileWithProgress = (file, container) => {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest()
+      const formData = new FormData()
+      formData.append('file', file)
+
+      // create file-box element
+      const fileBox = document.createElement('div')
+      fileBox.className = 'file-box uploading'
+
+      const sizeInKB = (file.size / 1024).toFixed(1)
+      const shortName =
+        file.name.length > 10 ? file.name.slice(0, 10) + '...' : file.name
+
+      fileBox.innerHTML = ` 
+      <p class="text">${shortName}</p> <span class="file-size">${sizeInKB} KB</span> 
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    `
+      container.appendChild(fileBox)
+
+      // Update progress fill
+      xhr.upload.addEventListener('progress', e => {
+        if (e.lengthComputable) {
+          const percent = (e.loaded / e.total) * 100
+          const fill = fileBox.querySelector('.progress-fill')
+          fill.style.width = `${percent}%`
+        }
+      })
+
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          fileBox.querySelector('.progress-bar').remove()
+
+          // add delete button once done
+          const deleteBtn = document.createElement('button')
+          deleteBtn.className = 'delete-file-btn'
+          deleteBtn.title = 'Delete file'
+          deleteBtn.textContent = '✕'
+          deleteBtn.addEventListener('click', () => {
+            const index = this.formData.project_attachments.findIndex(
+              f => f.name === file.name
+            )
+            if (index !== -1) {
+              this.formData.project_attachments.splice(index, 1)
+              this.renderFileList()
+            }
+          })
+
+          fileBox.appendChild(deleteBtn)
+          resolve(JSON.parse(xhr.responseText))
+        } else {
+          fileBox.querySelector('.progress-fill').style.backgroundColor = 'red'
+          reject(new Error('Upload failed'))
+        }
+      }
+
+      xhr.onerror = () => {
+        fileBox.querySelector('.progress-fill').style.backgroundColor = 'red'
+        reject(new Error('Network error'))
+      }
+
+      xhr.open('POST', 'http://localhost/andRize-project/php/upload.php')
+      xhr.send(formData)
     })
   }
 
@@ -395,6 +566,7 @@ class Step4Section extends HTMLElement {
                                 <div class="error-message date-error" style="position: absolute; bottom: -21px; display: none;">Please choose a date to continue.</div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label>Write a comprehensive project description to set goals for your project.</label> 
                             <textarea 
@@ -414,6 +586,20 @@ class Step4Section extends HTMLElement {
                                 <p class="message message-class">Examples of effective descriptions</p>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label>Attachments</label> 
+                            <div class="attachments-container" id="dropArea">
+                                <input type="file" id="fileInput" style="display:none" multiple />
+                                <p class="title">
+                                    Drag or <span class="color">Upload</span> files here
+                                </p>
+                                <p class="description">Maximum 5 attachments are allowed.</p> 
+
+                            </div>
+                            <div class="uploaded-files" id="uploadedFilesContainer"></div> 
+                        </div>
+
                     </div>
                     <div class="bottom-container">
                         <button class="prev-step-btn active">➝</button>
