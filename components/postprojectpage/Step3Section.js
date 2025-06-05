@@ -99,6 +99,7 @@ class Step3Section extends HTMLElement {
 
       // save to localStorage
       const attachmentsMeta = this.formData.project_attachments.map(f => ({
+        id: f.id,
         name: f.name,
         size: f.size
       }))
@@ -176,6 +177,7 @@ class Step3Section extends HTMLElement {
         try {
           const uploaded = await this.uploadFileWithProgress(file, fileList)
           uniqueMap.set(file.name, {
+            id: uploaded.id,
             name: uploaded.name,
             size: uploaded.size
           })
