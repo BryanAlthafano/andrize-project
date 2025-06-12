@@ -1531,6 +1531,7 @@ body.modal-open {
         height: auto;
         max-height: 100%;
         object-fit: contain;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
         border-radius: 16px;
         @media (min-width: 0px) and (max-width: 1024px) {
           aspect-ratio: 1 / 1;

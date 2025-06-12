@@ -69,7 +69,7 @@ class WorkflowSection extends HTMLElement {
     const videos = this.querySelectorAll('.left-side video')
 
     items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
+      item.addEventListener('click', () => {
         // delete 'active' class from all items
         items.forEach(i => i.classList.remove('active'))
         item.classList.add('active')
