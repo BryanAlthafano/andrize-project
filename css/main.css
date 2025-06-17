@@ -23,7 +23,7 @@ body {
   flex-direction: column;
 }
 
-body.modal-open { 
+body.modal-open {
   touch-action: none;
 }
 
@@ -903,7 +903,7 @@ body.modal-open {
   display: flex;
   flex-direction: row;
   padding: 20px 64px 0px;
-  gap: 20px; 
+  gap: 20px;
   @media (min-width: 0px) and (max-width: 750px) {
     margin-top: 68px;
     flex-direction: column;
