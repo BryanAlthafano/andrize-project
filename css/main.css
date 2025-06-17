@@ -23,8 +23,7 @@ body {
   flex-direction: column;
 }
 
-body.modal-open {
-  overflow: hidden;
+body.modal-open { 
   touch-action: none;
 }
 
