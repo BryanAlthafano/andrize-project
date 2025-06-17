@@ -64,11 +64,8 @@ class HeroSection extends HTMLElement {
                     </div>
                 </div>
             </div>
-            <div class="right-side">
-                <video controls muted>
-                    <source src="https://www.youtube.com/watch?v=Q838ABWXnng" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="right-side"> 
+                <img alt="img" src="assets/images/hero-img.png" class="right-side-img"/>
             </div>
         </section>
     `
