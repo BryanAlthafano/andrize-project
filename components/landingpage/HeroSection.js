@@ -26,8 +26,16 @@ class HeroSection extends HTMLElement {
     }
   }
 
-  // get custom attribute for scroll to element
   attachEvents () {
+    // function for scroll to element
+    this.attachEventScrollElement()
+
+    // function for post project button
+    this.attachEventPostProjectButton()
+  }
+
+  attachEventScrollElement () {
+    // get custom attribute for scroll to element
     this.querySelectorAll('[data-scroll-to]').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault()
@@ -35,6 +43,14 @@ class HeroSection extends HTMLElement {
         const page = link.getAttribute('data-page')
         this.scrollToSection(id, page)
       })
+    })
+  }
+
+  attachEventPostProjectButton () {
+    const postBtn = this.querySelector('.post-project-btn')
+
+    postBtn.addEventListener('click', () => {
+      window.location.href = 'post-project.html'
     })
   }
 
@@ -65,7 +81,7 @@ class HeroSection extends HTMLElement {
                 </div>
             </div>
             <div class="right-side"> 
-                <img alt="img" src="assets/images/hero-img.png" class="right-side-img"/>
+                <img alt="img" src="assets/images/hero-img.jpg" class="right-side-img"/>
             </div>
         </section>
     `
