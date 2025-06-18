@@ -40,8 +40,8 @@ class ContactSection extends HTMLElement {
 
   getTemplate () {
     return `
+        ${this.isActiveModal ? '<modal-section customTitle=""></modal-section>' : ''}
         <section class="contact-section-container spacing-beween-section">
-            ${this.isActiveModal ? '<modal-section customTitle=""></modal-section>' : ''}
             <div class="left-side">
                 <div class="gradient-border">
                     <div class="box">
