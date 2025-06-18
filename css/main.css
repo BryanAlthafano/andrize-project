@@ -995,7 +995,7 @@ body.modal-open {
           }
         }
 
-        .button-container { 
+        .button-container {
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -4093,7 +4093,7 @@ body.modal-open {
 
     .left-side {
       width: calc(50% - 10px);
-      @media (min-width: 0px) and (max-width: 1024px) {
+      @media (min-width: 0px) and (max-width: 1100px) {
         width: 100%;
       }
 
@@ -4101,6 +4101,14 @@ body.modal-open {
         gap: 200px;
         @media (min-width: 0px) and (max-width: 750px) {
           gap: 40px;
+        }
+        @media (min-width: 1100px) and (max-width: 1200px) {
+          gap: 32px;
+          padding: 32px;
+        }
+        @media (min-width: 1200px) and (max-width: 1300px) {
+          gap: 75px;
+          padding: 32px;
         }
 
         .top-content {
@@ -4111,10 +4119,19 @@ body.modal-open {
             gap: 24px;
           }
 
+          p.title {
+            @media (min-width: 1100px) and (max-width: 1200px) {
+              font-size: 50px;
+            }
+          }
+
           p.description {
             width: 100% !important;
             @media (min-width: 0px) and (max-width: 750px) {
               width: 90%;
+            }
+            @media (min-width: 1100px) and (max-width: 1200px) {
+              font-size: 22px;
             }
           }
         }
@@ -4155,6 +4172,9 @@ body.modal-open {
               @media (min-width: 0px) and (max-width: 750px) {
                 width: 100%;
               }
+              @media (min-width: 1100px) and (max-width: 1200px) {
+                width: 60%;
+              }
             }
           }
         }
@@ -4163,13 +4183,13 @@ body.modal-open {
 
     .right-side {
       width: calc(50% - 10px);
-      @media (min-width: 0px) and (max-width: 1024px) {
+      @media (min-width: 0px) and (max-width: 1100px) {
         display: none;
       }
 
       img.about-second-section-img {
         width: 100%;
-        height: 100%;
+        height: auto;
         border-radius: 16px;
       }
     }
