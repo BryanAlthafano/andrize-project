@@ -89,7 +89,7 @@ class FeedbackSection extends HTMLElement {
                                     alt="quote-item-icon"
                                 />
                             </div>
-                        <p class="text">AndRize made our product launch seamless. The manager handled everything — like having a COO on demand!</p>
+                        <p class="text">AndRize felt like hiring a mini agency on demand — but faster and way more flexible. The project manager handled everything while I focused on my launch.</p>
                         </div>
                         <div class="user-container">
                             <p class="name">Jane Doe</p>
@@ -105,7 +105,7 @@ class FeedbackSection extends HTMLElement {
                                     alt="quote-item-icon"
                                 />
                             </div>
-                        <p class="text">I was skeptical at first, but the process was smooth and the results exceeded expectations.</p>
+                        <p class="text">We needed a landing page, a product video, and some light copy — and our manager pulled in a great team and got it done in 2 weeks. Honestly impressed.</p>
                         </div>
                         <div class="user-container">
                             <p class="name">Lisa Wong</p>
@@ -121,7 +121,7 @@ class FeedbackSection extends HTMLElement {
                                     alt="quote-item-icon"
                                 />
                             </div>
-                        <p class="text">The quality and speed were outstanding. I didn’t have to micromanage at all.</p>
+                        <p class="text">I didn’t have time to manage 3 freelancers. AndRize let me hire one expert who brought in the right team and owned the whole thing. Will definitely use again.</p>
                         </div>
                         <div class="user-container">
                             <p class="name">Mark Taylor</p>

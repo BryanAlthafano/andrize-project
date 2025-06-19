@@ -2038,14 +2038,16 @@ body.modal-open {
         max-width: 100%;
         padding: 32px;
         gap: 16px;
-        height: 250px;
+        min-height: 250px;
+        height: auto;
+        align-self: stretch;
         @media (min-width: 750px) {
           border: solid 2px rgba(200, 186, 244, 1);
           flex: 0 0 calc(50% - 10px);
           max-width: calc(50% - 10px);
           gap: 24px;
           padding: 30px;
-          height: 330px;
+          min-height: 330px;
         }
         @media (min-width: 1024px) {
           flex: 0 0 calc(33.3333% - 13.333px);
