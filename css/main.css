@@ -2413,6 +2413,8 @@ body.modal-open {
         padding: 28px;
         gap: 32px;
         min-height: 340px;
+        height: auto;
+        align-self: stretch;
         @media (min-width: 900px) {
           flex: 0 0 calc(50% - 10px);
           max-width: calc(50% - 10px);
