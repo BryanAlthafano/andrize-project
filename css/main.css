@@ -4837,10 +4837,10 @@ body.modal-open {
           .message-post-button {
             min-width: 230px;
             @media (min-width: 0px) and (max-width: 750px) {
-              min-width: 70%;
+              width: 50%;
             }
             @media (min-width: 750px) and (max-width: 1000px) {
-              min-width: 80%;
+              width: 70%;
             }
           }
         }
