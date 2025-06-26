@@ -1905,6 +1905,16 @@ body.modal-open {
   display: flex;
   flex-direction: column;
 
+  /* handle zoom */
+  @media (min-width: 750px) {
+    @media (min-resolution: 133dpi) and (max-resolution: 151dpi) {
+      padding-top: 140px;
+    }
+    @media (min-resolution: 151dpi) {
+      padding-top: 210px;
+    }
+  }
+
   .heading-container {
     display: flex;
     flex-direction: row;

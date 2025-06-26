@@ -1,10 +1,24 @@
 class MessageSection extends HTMLElement {
   connectedCallback () {
     this.render()
+    this.attachEvents()
   }
 
   render () {
     this.innerHTML = this.getTemplate()
+  }
+
+  attachEvents() {
+    // function button post project
+    this.attachEventPostButton()
+  }
+
+  attachEventPostButton () {
+    const postBtn = this.querySelector('.message-post-button') 
+
+    postBtn.addEventListener('click', () => { 
+      window.location.href = 'post-project.html'
+    })
   }
 
   getTemplate () {
