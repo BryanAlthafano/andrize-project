@@ -1,0 +1,144 @@
+class HeroSection extends HTMLElement {
+  connectedCallback () {
+    this.render()
+    this.attachEvents()
+  }
+
+  // function for change page and scroll to element
+  scrollToSection (id, page) {
+    const currentPage = window.location.pathname.split('/').pop()
+    const el = id ? document.getElementById(id) : null
+
+    if (currentPage === page || currentPage === '' || currentPage === '/') {
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      } else if (id) {
+        setTimeout(() => {
+          const elRetry = document.getElementById(id)
+          if (elRetry) {
+            elRetry.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 500)
+      }
+    } else {
+      const url = id ? `${page}?scrollTo=${id}` : `${page}`
+      window.location.href = url
+    }
+  }
+
+  attachEvents () {
+    // function for scroll to element
+    this.attachEventScrollElement()
+
+    // function for post project button
+    this.attachEventPostProjectButton()
+  }
+
+  attachEventScrollElement () {
+    // get custom attribute for scroll to element
+    this.querySelectorAll('[data-scroll-to]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault()
+        const id = link.getAttribute('data-scroll-to')
+        const page = link.getAttribute('data-page')
+        this.scrollToSection(id, page)
+      })
+    })
+  }
+
+  attachEventPostProjectButton () {
+    const postBtn = this.querySelector('.post-project-btn')
+
+    postBtn.addEventListener('click', () => {
+      window.location.href = 'post-project.html'
+    })
+  }
+
+  render () {
+    this.innerHTML = this.getTemplate()
+  }
+
+  getTemplate () {
+    return `
+        <section class="hero-v2-wrap padding-each-section">
+            <div class="hero-v2-container">
+              <div class="left-side">
+                <div class="top-content">
+                  <div class="top-container">
+                    <p class="heading">Hire top project managers to build your team and <span class="highlight">get it done</span>
+                    </p>
+
+                    <div class="image-mobile-container">
+                      <img alt="hero-img-mobile-img" src="assets/images/hero-img-mobile-v2.svg" class="hero-img-mobile-img"/>
+                    </div>
+
+                    <p class="description">From AI tools to explainer videos, landing pages to brand campaigns—your ideas, delivered by expert-led freelance teams.</p>
+                  </div>
+                  <div class="button-container">
+                      <button class="post-project-btn">Post Your Project — It’s Free
+                        <img alt="arrow-right-white-icon" src="assets/icons/arrow-right-white.svg" class="arrow-right-white-icon"/>
+                      </button>
+                  </div>
+                </div>
+                
+                <div class="bottom-content">
+                  <p class="partner-heading">Trusted by Forward Thinking Teams</p>
+
+                  <div class="logo-carousel-wrapper">
+                    <div class="logo-carousel">
+                      <img
+                        class="logo"
+                        src="assets/images/logo-acme-v2.svg"
+                        alt="logo-icon-1"
+                        />
+                      <img
+                        class="logo"
+                        src="assets/images/logo-globex-v2.svg"
+                        alt="logo-icon-2"
+                      />
+                      <img
+                        class="logo"
+                        src="assets/images/logo-umbrella-v2.svg"
+                        alt="logo-icon-3"
+                      />
+                      <img
+                        class="logo"
+                        src="assets/images/logo-hooli-v2.svg"
+                        alt="logo-icon-4"
+                      />
+
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-acme-v2.svg"
+                        alt="logo-icon-1"
+                        />
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-globex-v2.svg"
+                        alt="logo-icon-2"
+                      />
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-umbrella-v2.svg"
+                        alt="logo-icon-3"
+                      />
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-hooli-v2.svg"
+                        alt="logo-icon-4"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="right-side"> 
+                <img alt="right-side-img" src="assets/images/hero-img-v2.svg" class="right-side-img"/>
+              </div>
+            </div>
+        </section>
+    `
+  }
+}
+
+customElements.define('hero-section', HeroSection)
