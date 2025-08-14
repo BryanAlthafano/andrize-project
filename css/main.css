@@ -14,6 +14,7 @@ html {
   --color-white: #ffffff;
   --base-vw: 1440;
 
+  --natural-100: #F5F5F5;
   --natural-200: #e5e5e5;
   --natural-300: #D6D6D6;
   --natural-500: #737373;
@@ -9662,6 +9663,227 @@ body.modal-open {
 
         .manager-list-prev-button:hover,
         .manager-list-next-button:hover {
+          cursor: pointer;
+          color: var(--color-white);
+          background-color: var(--main-color);
+        }
+      }
+    }
+  }
+}
+
+/* workkflow section */
+.workflow-v2-wrap {
+  .workflow-v2-container {
+    padding: 0px;
+    gap: 56px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+
+    @media (min-width: 0px) and (max-width: 750px) {
+      gap: 32px;
+    }
+
+    .heading-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      p.title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 60px;
+        letter-spacing: -0.2px;
+        color: var(--text-color-black);
+
+        @media (min-width: 0px) and (max-width: 750px) {
+          font-size: 28px;
+          width: 90%;
+          text-align: center;
+          line-height: 40px;
+        }
+
+        @media (min-width: 750px) and (max-width: 1000px) {
+          font-size: 38px;
+          line-height: 50px;
+        }
+
+        span.color {
+          color: var(--main-color);
+        }
+      }
+    }
+
+    .carousel-container.swiper {
+      width: 100%;
+      height: max-content;
+      position: relative;
+    }
+
+    .carousel-container {
+      .swiper-pagination {
+        position: relative;
+        width: auto;
+        align-self: end;
+        display: none;
+
+        @media (min-width: 750px) {
+          display: block;
+        }
+      }
+
+      .swiper-pagination .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(107, 73, 212, 0.5);
+      }
+
+      .swiper-pagination .swiper-pagination-bullet-active {
+        background-color: var(--main-color);
+      }
+
+      .workflow-v2-card-wrapper {
+        margin: 0 72px;
+
+        @media (min-width: 0px) and (max-width: 750px) {
+          margin: 0 20px;
+        }
+      }
+
+      .carousel-track {
+        .card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          box-sizing: border-box;
+          background: transparent;
+          text-align: left;
+          border-radius: 20px;
+          flex: 0 0 calc(100% - 10px);
+          max-width: calc(100% - 10px);
+          height: auto;
+          gap: 16px;
+
+          @media (min-width: 950px) {
+            flex: 0 0 calc(50% - 10px - 120px);
+            max-width: calc(50% - 10px - 120px);
+            gap: 28px;
+          }
+
+          .video-container {
+            background-color: var(--purple-50);
+            border: solid 1px var(--natural-100);
+            padding: 16px;
+            border-radius: 16px;
+
+            video.post-video {
+              width: 100%;
+              border-radius: 16px;
+              border: solid 1px var(--natural-100);
+            }
+          }
+
+          .content-container {
+            p.text {
+              font-weight: 600;
+              font-size: 24px;
+              letter-spacing: normal;
+              line-height: 32px;
+              color: var(--black-white);
+              margin: 0;
+              padding-left: 5px;
+
+              @media (min-width: 750px) and (max-width: 1200px) {
+                font-size: 22px;
+              }
+
+              @media (min-width: 0px) and (max-width: 750px) {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-controls {
+      pointer-events: none;
+      z-index: 5;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0px;
+      padding: 0px 72px;
+
+      @media (min-width: 0px) and (max-width: 750px) {
+        justify-content: center;
+        margin-top: 32px;
+        display: none;
+      }
+
+      .navigation-container {
+        pointer-events: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 8px;
+
+        .workflow-v2-prev-button {
+          align-self: center;
+          width: 60px;
+          height: 60px;
+          background-color: var(--color-white);
+          color: var(--main-color);
+          border-radius: 999px;
+          font-weight: 700;
+          font-size: 22px;
+          transform: rotate(180deg);
+          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+
+          @media (min-width: 0px) and (max-width: 750px) {
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        .workflow-v2-prev-button.swiper-button-disabled,
+        .workflow-v2-next-button.swiper-button-disabled {
+          display: none;
+          background-color: rgba(107, 73, 212, 0.1);
+          color: rgba(107, 73, 212, 0.4);
+          pointer-events: none;
+        }
+
+        .workflow-v2-next-button {
+          align-self: center;
+          width: 60px;
+          height: 60px;
+          background-color: var(--color-white);
+          color: var(--main-color);
+          border-radius: 999px;
+          font-weight: 700;
+          font-size: 22px;
+          cursor: pointer;
+          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+          @media (min-width: 0px) and (max-width: 750px) {
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        .workflow-v2-prev-button:hover,
+        .workflow-v2-next-button:hover {
           cursor: pointer;
           color: var(--color-white);
           background-color: var(--main-color);
