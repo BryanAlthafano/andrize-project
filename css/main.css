@@ -9262,6 +9262,7 @@ body.modal-open {
         border-radius: 20px;
         height: 440px;
         max-width: 387px;
+        overflow: hidden;
 
         @media (min-width: 0px) and (max-width: 750px) {
           width: 100%;
