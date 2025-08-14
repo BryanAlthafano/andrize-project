@@ -107,7 +107,7 @@ class WorkflowtSection extends HTMLElement {
                         workflow?.id
                       }"> 
                         <div class="video-container">
-                            <video class="post-video" controls muted>
+                            <video class="post-video" controls muted playsInline>
                                 <source src="assets/videos/${
                                   workflow?.url
                                 }.mp4" type="video/mp4">
