@@ -10,7 +10,7 @@ class FeedbackSection extends HTMLElement {
       {
         id: 1,
         quote:
-          '“ I want to firstly thank team for displaying the packages so clearly that even a layman can understand. I have gone through multiple websites, but Mystery Monks website was clear about the video types and packages. Regarding the project, the first video draft was not satisfactory; however, the final version is good after many design suggestions from me. I would rate 4.0 for this project. I want to thank especially Pallavi, Creative Director, for all her efforts in this project. My sincere thanks to each and everyone involved in this project. “',
+          '“It felt like I hired a mini agency on demand—without the headache.”',
         author: 'Jane Mehta',
         role: 'Founder, HealthByte',
         author_photo_profile: 'photo-profile-1'
@@ -37,7 +37,7 @@ class FeedbackSection extends HTMLElement {
   initSwiper () {
     const self = this
 
-    new Swiper('.card-wrapper', {
+    new Swiper('.feedback-v2-card-wrapper', {
       loop: false,
 
       // pagination
@@ -59,8 +59,8 @@ class FeedbackSection extends HTMLElement {
 
       // navigation
       navigation: {
-        nextEl: '.next-button',
-        prevEl: '.prev-button'
+        nextEl: '.feedback-v2-next-button',
+        prevEl: '.feedback-v2-prev-button'
       },
 
       on: {
@@ -76,16 +76,17 @@ class FeedbackSection extends HTMLElement {
 
   // function for update navigation buttons
   updateNavButtons (swiper) {
-    const prevButton = document.querySelector('.prev-button')
-    const nextButton = document.querySelector('.next-button')
+    const prevButton = document.querySelector('.feedback-v2-prev-button')
+    const nextButton = document.querySelector('.feedback-v2-next-button')
+    const lastIndex = swiper.slides.length - swiper.params.slidesPerView
 
-    if (swiper.isBeginning) {
+    if (swiper.activeIndex <= 0) {
       prevButton.classList.add('disabled')
     } else {
       prevButton.classList.remove('disabled')
     }
 
-    if (swiper.isEnd) {
+    if (swiper.activeIndex >= lastIndex) {
       nextButton.classList.add('disabled')
     } else {
       nextButton.classList.remove('disabled')
@@ -105,7 +106,7 @@ class FeedbackSection extends HTMLElement {
             </div>
     
             <div class="carousel-container swiper">
-                <div class="card-wrapper">
+                <div class="feedback-v2-card-wrapper">
                   <div class="carousel-track swiper-wrapper">
                     ${this.testimonials
                       .map(testi => {
@@ -143,10 +144,10 @@ class FeedbackSection extends HTMLElement {
                 <div class="carousel-controls">
                     <div class="navigation-container">
                         <div>
-                          <button class="prev-button">➝</button>
+                          <button class="feedback-v2-prev-button">➝</button>
                         </div>
                         <div>
-                          <button class="next-button">➝</button>
+                          <button class="feedback-v2-next-button">➝</button>
                         </div>
                     </div> 
                 </div>

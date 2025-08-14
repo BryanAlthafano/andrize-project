@@ -1,40 +1,40 @@
 class ProductExcellenceSection extends HTMLElement {
-  connectedCallback() {
-    this.initData();
-    this.render();
+  connectedCallback () {
+    this.initData()
+    this.render()
   }
 
-  initData() {
+  initData () {
     this.product_excellence_list = [
       {
         id: 1,
-        title: 'Hire One Manager, Not Five Creators',
+        title: 'Hire One Expert, Not Five Freelancers',
         description:
-          'Your project manager assembles and leads the right freelance creators for you.',
-        vector: 'product-excellence-vector-1',
+          'Your project manager assembles and leads the right team for you.',
+        vector: 'product-excellence-vector-1'
       },
       {
         id: 2,
         title: 'No Timelines or Revisions to Chase',
         description:
           'Skip the follow-ups. Your manager handles scope, deadlines, and delivery.',
-        vector: 'product-excellence-vector-2',
+        vector: 'product-excellence-vector-2'
       },
       {
         id: 3,
-        title: 'Stay in control of your budget',
+        title: 'Just 5% Platform Fee',
         description:
-          'You approve the proposal. You set the budget. No hidden fees, no surprise costs.',
-        vector: 'product-excellence-vector-3',
-      },
-    ];
+          'No bloat, no hidden fees — elite freelance talent at honest pricing.',
+        vector: 'product-excellence-vector-3'
+      }
+    ]
   }
 
-  render() {
-    this.innerHTML = this.getTemplate();
+  render () {
+    this.innerHTML = this.getTemplate()
   }
 
-  getTemplate() {
+  getTemplate () {
     return `
         <section class="product-excellence-v2-wrap padding-each-section spacing-beween-section">
             <div class="product-excellence-v2-container">
@@ -43,7 +43,7 @@ class ProductExcellenceSection extends HTMLElement {
               </div>
               <div class="card-list">
                   ${this.product_excellence_list
-                    .map((product) => {
+                    .map(product => {
                       return `
                       <div class="card-container">
                           <img alt="product-excellence-vector-1" src="assets/images/${product?.vector}.svg" class="product-excellence-vector"/>
@@ -51,14 +51,14 @@ class ProductExcellenceSection extends HTMLElement {
                           <p class="title">${product?.title}</p>
                           <p class="description">${product?.description}</p>
                         </div>
-                      </div>`;
+                      </div>`
                     })
                     .join('')}
               </div>
             </div>
         </section>
-    `;
+    `
   }
 }
 
-customElements.define('product-excellence-section', ProductExcellenceSection);
+customElements.define('product-excellence-section', ProductExcellenceSection)
