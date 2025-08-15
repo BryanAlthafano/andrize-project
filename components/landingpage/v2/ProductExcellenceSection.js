@@ -8,9 +8,9 @@ class ProductExcellenceSection extends HTMLElement {
     this.product_excellence_list = [
       {
         id: 1,
-        title: 'Hire One Expert, Not Five Freelancers',
+        title: 'Hire One Manager, Not Five Creators',
         description:
-          'Your project manager assembles and leads the right team for you.',
+          'Your project manager assembles and leads the right freelance creators for you.',
         vector: 'product-excellence-vector-1'
       },
       {
@@ -22,9 +22,9 @@ class ProductExcellenceSection extends HTMLElement {
       },
       {
         id: 3,
-        title: 'Just 5% Platform Fee',
+        title: 'Stay in control of your budget',
         description:
-          'No bloat, no hidden fees — elite freelance talent at honest pricing.',
+          'You approve the proposal. You set the budget. No hidden fees, no surprise costs.',
         vector: 'product-excellence-vector-3'
       }
     ]
