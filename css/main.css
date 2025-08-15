@@ -9586,9 +9586,13 @@ body.modal-open {
             color: var(--purple-50);
             font-size: 16px;
             line-height: 20px;
-            font-weight: 500;
+            font-weight: 400;
             cursor: pointer;
             z-index: 9;
+
+            @media (min-width: 0px) and (max-width: 750px) {
+              height: 44px;
+            }
           }
 
           .manager-list-post-btn:hover {
