@@ -64,7 +64,7 @@ class CustomFooter extends HTMLElement {
                     src="assets/images/logo-desktop.svg" 
                     alt="logo">
                     
-                    <p class="text">Hire Expert Project Managers To Assemble Your <br/> Team And Deliver Your Next Big Idea.</p>
+                    <p class="text">Hire expert project managers to assemble your team and deliver your next big idea.</p>
                 </div>
                 <div class="right-side">
                     <div class="service-container">
