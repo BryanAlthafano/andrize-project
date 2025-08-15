@@ -3,6 +3,21 @@ class WorkflowtSection extends HTMLElement {
     this.initData()
     this.render()
     this.initSwiper()
+    this.attachEvents()
+
+    // handle resize for re-render component
+    this._handleResize = this._handleResize.bind(this)
+    window.addEventListener('resize', this._handleResize)
+  }
+
+  disconnectedCallback () {
+    window.removeEventListener('resize', this._handleResize)
+    window.removeEventListener('scroll', this._scrollHandler)
+
+    if (this._resizeObserver) {
+      this._resizeObserver.disconnect()
+      this._resizeObserver = null
+    }
   }
 
   initData () {
@@ -37,6 +52,9 @@ class WorkflowtSection extends HTMLElement {
       //   el: '.swiper-pagination'
       // },
 
+      mousewheel: false,
+      grabCursor: true,
+
       // responsive
       breakpoints: {
         0: {
@@ -58,9 +76,19 @@ class WorkflowtSection extends HTMLElement {
       on: {
         init: function () {
           self.updateNavButtons(this)
+
+          // autoplay video
+          if (self._handleScroll) self._handleScroll()
         },
         slideChange: function () {
           self.updateNavButtons(this)
+
+          // autoplay video
+          if (self._handleScroll) self._handleScroll()
+        },
+        transitionEnd: function () {
+          // autoplay video
+          if (self._handleScroll) self._handleScroll()
         }
       }
     })
@@ -87,6 +115,81 @@ class WorkflowtSection extends HTMLElement {
 
   render () {
     this.innerHTML = this.getTemplate()
+  }
+
+  attachEvents () {
+    // handle autoplay/pause video on scroll
+    this.attachScrollEventForVideos()
+  }
+
+  attachScrollEventForVideos () {
+    this._handleScroll = () => {
+      const videos = this.querySelectorAll(
+        'video:not([style*="display: none"])'
+      )
+
+      let visibleVideos = []
+
+      videos.forEach(video => {
+        const rect = video.getBoundingClientRect()
+
+        // calculate the height
+        const visibleHeight =
+          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
+        const heightRatio = visibleHeight / rect.height
+
+        // calculate the width
+        const visibleWidth =
+          Math.min(rect.right, window.innerWidth) - Math.max(rect.left, 0)
+        const widthRatio = visibleWidth / rect.width
+
+        if (heightRatio >= 0.9 && widthRatio >= 0.9) {
+          if (video.paused) {
+            // console.log('play', video)
+            video.play().catch(() => {})
+          }
+        } else {
+          if (!video.paused) {
+            // console.log('paused', video)
+            video.pause()
+          }
+        }
+      })
+    }
+
+    window.addEventListener('scroll', this._handleScroll)
+    this._handleScroll() // Run on first mount
+  }
+
+  _handleResize () {
+    clearTimeout(this._resizeTimeout)
+    this._resizeTimeout = setTimeout(() => {
+      // 1. save time all video
+      const times = {}
+      this.querySelectorAll('video').forEach(video => {
+        const key = video.className // use class for key
+        times[key] = {
+          currentTime: video.currentTime,
+          wasPlaying: !video.paused
+        }
+      })
+
+      // 2. re-Render
+      this.render()
+      this.attachEvents()
+
+      // 3. Restore
+      this.querySelectorAll('video').forEach(video => {
+        const key = video.className
+        const saved = times[key]
+        if (saved) {
+          video.currentTime = saved.currentTime
+          if (saved.wasPlaying) {
+            video.play().catch(() => {})
+          }
+        }
+      })
+    }, 200)
   }
 
   getTemplate () {

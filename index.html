@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="css/main.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -13,13 +13,8 @@
   </head>
   <body>
     <custom-header></custom-header>
-    <hero-section></hero-section>
-    <!-- <problem-section id="problemId"></problem-section>
-    <feature-section id="featureId"></feature-section>
-    <product-excellence-section id="productExcellenceId"></product-excellence-section>
-    <partner-section id="parnertId"></partner-section>
-    <service-section id="serviceId"></service-section>
-    <preview-project-section id="previewProjectId"></preview-project-section> -->
+    <hero-section></hero-section> 
+    <preview-project-section id="previewProjectId"></preview-project-section>  
     <workflow-section id="workflowId"></workflow-section>
     <manager-list-section id="managerListId"></manager-list-section>
     <product-excellence-section
@@ -40,15 +35,10 @@
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- component -->
-    <script src="components/landingpage/ProblemSection.js"></script>
-    <script src="components/landingpage/FeatureSection.js"></script> 
-    <script src="components/landingpage/PartnerSection.js"></script>
-    <script src="components/landingpage/ServiceSection.js"></script>
-    <script src="components/landingpage/PreviewProjectSection.js"></script>
-
+    <!-- component --> 
     <script src="components/common/v2/header.js"></script>
     <script src="components/landingpage/v2/HeroSection.js"></script>
+    <script src="components/landingpage/v2/PreviewProjectSection.js"></script>
     <script src="components/landingpage/v2/WorkflowSection.js"></script>
     <script src="components/landingpage/v2/ManagerListSection.js"></script>
     <script src="components/landingpage/v2/ProductExcellenceSection.js"></script>
@@ -56,6 +46,8 @@
     <script src="components/landingpage/v2/FAQSection.js"></script> 
     <script src="components/landingpage/v2/CTASection.js"></script>
     <script src="components/common/v2/footer.js"></script>
+
+    <script src="components/common/v2/ProjectCard.js"></script>
 
     <script>
       window.addEventListener('DOMContentLoaded', () => {

@@ -65,6 +65,9 @@ class ManagerListSection extends HTMLElement {
       //   el: '.swiper-pagination'
       // },
 
+      mousewheel: false,
+      grabCursor: true,
+
       // responsive
       breakpoints: {
         0: {
