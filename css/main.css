@@ -41,7 +41,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 1920px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -8078,7 +8078,7 @@ body.modal-open {
 /* ================ UI v2 ================ */
 /* header */
 .header-v2-container {
-  max-width: 1920px;
+  max-width: 1440px;
   position: fixed;
   width: 100%;
   background-color: var(--main-background-color);
