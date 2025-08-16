@@ -6,8 +6,8 @@ class WorkflowtSection extends HTMLElement {
     this.attachEvents()
 
     // handle resize for re-render component
-    this._handleResize = this._handleResize.bind(this)
-    window.addEventListener('resize', this._handleResize)
+    // this._handleResize = this._handleResize.bind(this)
+    // window.addEventListener('resize', this._handleResize)
   }
 
   disconnectedCallback () {
@@ -44,16 +44,14 @@ class WorkflowtSection extends HTMLElement {
   initSwiper () {
     const self = this
 
-    new Swiper('.workflow-v2-card-wrapper', {
+    this._swiper = new Swiper('.workflow-v2-card-wrapper', {
       loop: false,
-
-      // pagination
-      // pagination: {
-      //   el: '.swiper-pagination'
-      // },
 
       mousewheel: false,
       grabCursor: true,
+
+      observer: true,
+      observeParents: true,
 
       // responsive
       breakpoints: {
@@ -128,8 +126,6 @@ class WorkflowtSection extends HTMLElement {
         'video:not([style*="display: none"])'
       )
 
-      let visibleVideos = []
-
       videos.forEach(video => {
         const rect = video.getBoundingClientRect()
 
@@ -177,6 +173,9 @@ class WorkflowtSection extends HTMLElement {
       // 2. re-Render
       this.render()
       this.attachEvents()
+
+      // Re-init swiper & update
+      if (this._swiper) this._swiper.update()
 
       // 3. Restore
       this.querySelectorAll('video').forEach(video => {
