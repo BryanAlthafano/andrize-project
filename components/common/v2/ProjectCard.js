@@ -67,9 +67,12 @@ class ProjectCard extends HTMLElement {
     this.querySelectorAll('.info-icon').forEach(el => {
       tippy(el, {
         allowHTML: true,
-        placement: 'top',
+        placement: 'top-end',
         trigger: 'click',
         arrow: false,
+        offset: [10, -18],
+        hideOnClick: true,
+        maxWidth: 180,
         content: this.peopleDescription
       })
     })
