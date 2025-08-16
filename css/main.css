@@ -10385,14 +10385,14 @@ body.modal-open {
 
 
     .show-more-btn {
-      width: 18%;
+      width: 220px;
       height: 52px !important;
       border-radius: 16px;
       background-color: var(--purple-600);
 
       @media (min-width: 0px) and (max-width: 750px) {
         height: 44px !important;
-        width: 100%;
+        width: 202px;
       }
     }
 
@@ -10413,7 +10413,7 @@ body.modal-open {
     padding-top: 8px;
 
     @media (min-width: 0px) and (max-width: 750px) {
-      padding-top: 0px;
+      padding: 0px !important;
     }
 
     .box-information {
@@ -10422,16 +10422,162 @@ body.modal-open {
       padding: 56px 52px;
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
 
       @media (min-width: 0px) and (max-width: 750px) {
         padding: 40px 20px;
+        border-radius: 0px;
       }
 
       @media (min-width: 750px) and (max-width: 1000px) {
         padding: 48px 36px;
       }
 
+      .category-container {
+        z-index: 5;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .item {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          p.title {
+            color: var(--purple-900);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20.9px;
+            border-radius: 31.35px;
+            border: solid 2px var(--color-white);
+            background-color: var(--purple-200);
+            padding: 8px 16px;
+            margin: 0;
+            box-shadow: 5.23px 5.23px 13.06px 0px rgba(27, 7, 49, 0.12);
+
+
+            @media (min-width: 0px) and (max-width: 750px) {
+              padding: 3.1px 9.31px;
+              font-size: 10.09px;
+              line-height: 16.54px;
+            }
+
+            @media (min-width: 750px) and (max-width: 1000px) {
+              padding: 5.1px 11.31px;
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+
+          img.cursor-icon {
+            position: absolute;
+            right: -22px;
+            bottom: -20px;
+            width: 28px;
+            height: 28px;
+
+            @media (min-width: 0px) and (max-width: 750px) {
+              width: 20px;
+              height: 20px;
+              right: -16px;
+              bottom: -14px;
+            }
+
+            @media (min-width: 750px) and (max-width: 1000px) {
+              width: 24px;
+              height: 24px;
+              right: -19px;
+              bottom: -17px;
+            }
+
+            &.bottom-right {
+              left: -22px;
+              transform: scaleX(-1);
+
+              @media (min-width: 0px) and (max-width: 750px) {
+                left: -16px;
+              }
+
+              @media (min-width: 750px) and (max-width: 1000px) {
+                left: -19px;
+              }
+            }
+
+            &.top-right {
+              right: -22px;
+              top: -20px;
+              transform: scaleY(-1);
+
+              @media (min-width: 0px) and (max-width: 750px) {
+                right: -16px;
+                top: -14px;
+              }
+
+              @media (min-width: 750px) and (max-width: 1000px) {
+                right: -19px;
+                top: -17px;
+              }
+            }
+
+            &.top-left {
+              left: -22px;
+              top: -20px;
+              transform: rotate(180deg);
+
+              @media (min-width: 0px) and (max-width: 750px) {
+                left: -16px;
+                top: -14px;
+              }
+
+              @media (min-width: 750px) and (max-width: 1000px) {
+                left: -19px;
+                top: -17px;
+              }
+            }
+          }
+        }
+
+        &.top {
+          margin-bottom: 5px;
+
+          @media (min-width: 0px) and (max-width: 750px) {
+            margin-bottom: 52px;
+          }
+
+          @media (min-width: 750px) and (max-width: 1000px) {
+            margin-bottom: 44px;
+          }
+        }
+
+        &.bottom {
+          margin-top: 5px;
+
+          @media (min-width: 0px) and (max-width: 750px) {
+            margin-top: 52px;
+          }
+
+          @media (min-width: 750px) and (max-width: 1000px) {
+            margin-top: 44px;
+          }
+        }
+      }
+
+      .vector-container {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+
+        img.vector {
+          width: 100%;
+        }
+      }
+
       .title-container {
+        z-index: 5;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -10448,11 +10594,18 @@ body.modal-open {
           @media (min-width: 0px) and (max-width: 750px) {
             font-size: 30px;
             width: 90%;
+            line-height: 44px;
           }
 
           @media (min-width: 750px) and (max-width: 1000px) {
-            font-size: 38px;
-            width: 90%;
+            font-size: 52px;
+            width: 70%;
+            line-height: 50px;
+          }
+
+          @media (min-width: 1000px) and (max-width: 1250px) {
+            font-size: 60px;
+            width: 70%;
           }
 
           .highlight {
@@ -10462,6 +10615,7 @@ body.modal-open {
       }
 
       .description-container {
+        z-index: 5;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -10474,16 +10628,21 @@ body.modal-open {
           line-height: 24px;
           letter-spacing: normal;
           color: var(--natural-500);
-          width: 35%;
+          width: 40%;
 
           @media (min-width: 0px) and (max-width: 750px) {
             font-size: 14px;
-            width: 90%;
+            width: 95%;
+            line-height: 20px;
           }
 
           @media (min-width: 750px) and (max-width: 1000px) {
-            font-size: 20px;
-            width: 90%;
+            font-size: 15px;
+            width: 60%;
+          }
+
+          @media (min-width: 1000px) and (max-width: 1300px) {
+            width: 50%;
           }
         }
       }
