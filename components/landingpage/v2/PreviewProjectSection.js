@@ -66,12 +66,11 @@ class PreviewProjectSection extends HTMLElement {
     new Swiper('.preview-project-v2-card-wrapper', {
       loop: false,
 
-      // pagination
-      // pagination: {
-      //   el: '.swiper-pagination'
-      // },
       mousewheel: false,
       grabCursor: true,
+
+      touchStartPreventDefault: false,
+      touchMoveStopPropagation: false,
 
       // responsive
       breakpoints: {
