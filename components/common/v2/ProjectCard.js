@@ -69,6 +69,7 @@ class ProjectCard extends HTMLElement {
         allowHTML: true,
         placement: 'top',
         trigger: 'click',
+        arrow: false,
         content: this.peopleDescription
       })
     })
