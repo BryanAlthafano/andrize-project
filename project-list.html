@@ -9,23 +9,22 @@
   </head>
   <body>
     <custom-header></custom-header>
-    <section class="project-list-container">
-      <div class="box-information-container">
+    <section class="project-list-v2-container">
+      <div class="box-information-container padding-each-section">
         <div class="box-information">
           <div class="title-container">
-            <p class="title">What Can You Get Done on AndRize?</p>
+            <p class="title">What can you <span class="highlight">get done</span> on AndRize?</p>
           </div>
           <div class="description-container">
             <p class="description">
-              From creative projects to complex tasks — post your idea, and
-              we’ll match you with the right team to bring it to life.
+              From creative projects to complex tasks — post your idea, and we’ll match you with the right team to bring it to life.
             </p>
           </div>
         </div>
       </div>
       <project-list-section></project-list-section>
-    </section>
-    <feature-section-2></feature-section-2>
+    <cta-section id="ctaId"></cta-section>
+    </section> 
     <custom-footer with-margin-top="with-margin-top"></custom-footer>
 
     <!-- tailwind -->
@@ -37,8 +36,10 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
     <!-- component -->
     <script src="components/common/v2/header.js"></script>
-    <script src="components/projectlist/ProjectListSection.js"></script>
-    <script src="components/landingpage/FeatureSection2.js"></script>
+    <script src="components/projectlist/v2/ProjectListSection.js"></script> 
+    <script src="components/landingpage/v2/CTASection.js"></script>
     <script src="components/common/v2/footer.js"></script>
+
+    <script src="components/common/v2/ProjectCard.js"></script>
   </body>
 </html>

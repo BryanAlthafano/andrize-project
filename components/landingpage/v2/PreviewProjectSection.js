@@ -139,7 +139,7 @@ class PreviewProjectSection extends HTMLElement {
                 <div class="preview-project-v2-card-wrapper">
                   <div class="carousel-track swiper-wrapper">
                     ${this.projectList
-                      .map((project, index) => {
+                      .map(project => {
                         return `
                         <project-card
                         class="card swiper-slide"
