@@ -12,6 +12,7 @@ html {
   --text-color-black: rgba(13, 13, 56, 1);
   --text-color-white: rgba(230, 230, 245, 1);
   --color-white: #ffffff;
+  --color-black: #000000;
   --base-vw: 1440;
 
   --natural-100: #F5F5F5;
@@ -8949,7 +8950,7 @@ body.modal-open {
         font-size: 48px;
         line-height: 60px;
         letter-spacing: -0.2px;
-        color: var(--text-color-black);
+        color: var(--color-black);
 
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 28px;
@@ -9374,7 +9375,7 @@ body.modal-open {
         font-size: 48px;
         line-height: 60px;
         letter-spacing: -0.2px;
-        color: var(--text-color-black);
+        color: var(--color-black);
 
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 28px;
@@ -9710,7 +9711,7 @@ body.modal-open {
         font-size: 48px;
         line-height: 60px;
         letter-spacing: -0.2px;
-        color: var(--text-color-black);
+        color: var(--color-black);
 
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 28px;
@@ -9931,7 +9932,7 @@ body.modal-open {
         font-size: 48px;
         line-height: 60px;
         letter-spacing: -0.2px;
-        color: var(--text-color-black);
+        color: var(--color-black);
 
         @media (min-width: 0px) and (max-width: 750px) {
           font-size: 28px;
@@ -10163,7 +10164,7 @@ body.modal-open {
           font-size: 24px;
           line-height: 32px;
           letter-spacing: normal;
-          color: var(--text-color-black);
+          color: var(--color-black);
 
           @media (min-width: 0px) and (max-width: 750px) {
             font-size: 20px;
@@ -10265,7 +10266,7 @@ body.modal-open {
               font-size: 14px;
               line-height: 20px;
               letter-spacing: normal;
-              color: var(--text-color-black);
+              color: var(--color-black);
 
               @media (min-width: 0px) and (max-width: 750px) {
                 font-size: 14px;
@@ -10656,7 +10657,7 @@ body.modal-open {
 
 .tippy-box {
   background-color: #C4B6EE;
-  color: var(--text-color-black);
+  color: var(--color-black);
   border-radius: 12px;
   padding: 8px;
   font-size: 12px;
