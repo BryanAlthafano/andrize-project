@@ -29,12 +29,12 @@ class WorkflowtSection extends HTMLElement {
       },
       {
         id: 2,
-        description: 'Get Proposals',
+        description: 'Review Proposals & Hire a Manager',
         url: 'video-2-v2'
       },
       {
         id: 3,
-        description: 'Pick, Fund & Launch',
+        description: 'Your vision delivered',
         url: 'video-3-v2'
       }
     ]
