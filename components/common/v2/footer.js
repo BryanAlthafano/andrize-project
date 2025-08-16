@@ -79,8 +79,8 @@ class CustomFooter extends HTMLElement {
                     <div class="contact-container">
                         <p class="heading">Contact</p>
                         <ul class="contact-list">
-                            <li>andrize@gmail.com</li>
-                            <li>+33(0)1 71 19 72 72</li>
+                            <li>business@andrize.com</li>
+                            <li>+91 92580 86206</li>
                             <li>Help center</li> 
                             <li><a href="#" data-page="index.html" data-scroll-to="workflowId">Tutorials</a></li>
                         </ul>
