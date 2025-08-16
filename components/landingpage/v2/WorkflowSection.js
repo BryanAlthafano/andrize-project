@@ -117,7 +117,7 @@ class WorkflowtSection extends HTMLElement {
 
   attachEvents () {
     // handle autoplay/pause video on scroll
-    this.attachScrollEventForVideos()
+    // this.attachScrollEventForVideos()
   }
 
   attachScrollEventForVideos () {
