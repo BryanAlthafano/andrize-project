@@ -89,7 +89,7 @@ class ProjectCard extends HTMLElement {
     return `
         <div class="project-card">
             <div class="top-container">
-                <img alt="cover" class="cover-card" src="assets/images/${this.coverUrl}.svg">
+                <img alt="cover" class="cover-card" src="assets/images/${this.coverUrl}.jpg">
                 <div class="cover-content">
                     <div class="niche-container">
                         <p class="niche">${this.niche}</p>
