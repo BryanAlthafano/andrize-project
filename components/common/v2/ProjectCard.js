@@ -13,16 +13,8 @@ class ProjectCard extends HTMLElement {
   }
 
   connectedCallback () {
-    // freeze element
-    document.body.classList.add('modal-open')
-
     this.render()
     this.attachEvents()
-  }
-
-  disconnectedCallback () {
-    // delete freeze element
-    document.body.classList.remove('modal-open')
   }
 
   // custom attribute
@@ -88,6 +80,7 @@ class ProjectCard extends HTMLElement {
   getTemplate () {
     return `
         <div class="project-card">
+
             <div class="top-container">
                 <img alt="cover" class="cover-card" src="assets/images/${this.coverUrl}.jpg">
                 <div class="cover-content">
@@ -96,6 +89,7 @@ class ProjectCard extends HTMLElement {
                     </div>
                 </div>
             </div>
+
             <div class="bottom-container">
                 <div class="content-container">
                     <div class="content-top">
@@ -135,7 +129,6 @@ class ProjectCard extends HTMLElement {
                                 <p class="title">Duration</p>
                             </div>
                             </div>
-
                             <div class="box-bottom">
                                 <p class="description">${this.duration}</p>
                             </div>
@@ -175,6 +168,7 @@ class ProjectCard extends HTMLElement {
                     <button class="view-project primary-dark-btn">View Project</button>
                 </div>
             </div>
+
         </div>
     `
   }
