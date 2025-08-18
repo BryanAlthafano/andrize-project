@@ -28,6 +28,8 @@ class CustomFooter extends HTMLElement {
             elRetry.scrollIntoView({ behavior: 'smooth' })
           }
         }, 500)
+      } else {
+        window.location.href = page
       }
     } else {
       const url = id ? `${page}?scrollTo=${id}` : `${page}`
@@ -53,7 +55,9 @@ class CustomFooter extends HTMLElement {
 
   getTemplate () {
     return `
-        <footer class="footer-container ${this.withMarginTop !== '' ? 'spacing-beween-section' : ''}">
+        <footer class="footer-container ${
+          this.withMarginTop !== '' ? 'spacing-beween-section' : ''
+        }">
             <div class="footer-container-top">
                 <div class="left-side">
                     <img 

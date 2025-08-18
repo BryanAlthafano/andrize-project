@@ -1,4 +1,4 @@
-class ProjectCard extends HTMLElement {
+class ProjectCardDetail extends HTMLElement {
   static get observedAttributes () {
     return [
       'niche',
@@ -18,11 +18,13 @@ class ProjectCard extends HTMLElement {
     this.initData()
     this.render()
     this.attachEvents()
-    this.listenForChildUpdates()
   }
 
-  initData () {
-    this.isActiveModal = false
+  disconnectedCallback () {
+    if (this.modalEl) {
+      this.modalEl.remove()
+      this.modalEl = null
+    }
   }
 
   // custom attribute
@@ -57,20 +59,30 @@ class ProjectCard extends HTMLElement {
     return this.getAttribute('videoUrl') || ''
   }
 
+  initData () {
+    this.modalEl = null
+  }
+
   render () {
-    this.innerHTML = this.getTemplate()
+    // create modal element
+    this.modalEl = document.createElement('div')
+    this.modalEl.className = 'project-card-detail-container'
+    this.modalEl.innerHTML = this.getTemplate()
+
+    // add to body
+    document.body.appendChild(this.modalEl)
   }
 
   attachEvents () {
-    // handle button
-    this.attachEventViewProjectButton()
-
     // handle tooltip
     this.attachEventTooltip()
+
+    // handle close button
+    this.attachEventCloseButton()
   }
 
   attachEventTooltip () {
-    this.querySelectorAll('.info-icon').forEach(el => {
+    this.modalEl.querySelectorAll('.info-icon-2').forEach(el => {
       tippy(el, {
         allowHTML: true,
         placement: 'top-end',
@@ -84,46 +96,47 @@ class ProjectCard extends HTMLElement {
     })
   }
 
-  attachEventViewProjectButton () {
-    const modalBtn = this.querySelector('.view-project')
+  attachEventCloseButton () {
+    const modalBtn = this.modalEl.querySelector('.close-btn')
     modalBtn.addEventListener('click', () => {
-      this.isActiveModal = true
-      this.render()
-    })
-  }
-
-  listenForChildUpdates () {
-    this.addEventListener('modal-closed', e => {
-      if (e.detail === 'closed') {
-        this.isActiveModal = false
-      }
-      this.render()
-      this.attachEvents()
+      // to detect parent if modal closed
+      this.dispatchEvent(
+        new CustomEvent('modal-closed', {
+          bubbles: true,
+          detail: 'closed'
+        })
+      )
     })
   }
 
   getTemplate () {
-    return `        
-        <div class="project-card">
-            <div class="top-container">
-                <img alt="cover" class="cover-card" src="assets/images/${
-                  this.coverUrl
-                }.jpg">
-                <div class="cover-content">
-                    <div class="niche-container">
-                        <p class="niche">${this.niche}</p>
-                    </div>
+    return ` 
+    <div class="box">
+      <div class="box-scroll-area">
+          <div class="top-container">
+            <div class="top-content">
+              <div class="top">
+                <div class="header">
+                  <p class="title">${this.title}</p>
+                  <div>
+                    <button class="close-btn">
+                      <p class="close">&times;</p>
+                    </button>
+                  </div>
                 </div>
+
+                <div class="cover-container">
+                  <img alt="cover" class="cover-card" src="assets/images/${this.coverUrl}.jpg">
+                  <div class="cover-content">
+                      <div class="niche-container">
+                          <p class="niche">${this.niche}</p>
+                      </div>
+                  </div>
+                </div> 
             </div>
 
-            <div class="bottom-container">
-                <div class="content-container">
-                    <div class="content-top">
-                        <p class="title">${this.title}</p>
-                        <p class="description">${this.description}</p>
-                    </div>
-                    <div class="content-bottom">
-                        <div class="box">
+            <div class="info-container">
+                        <div class="info-box">
                             <div class="box-top">
                                 <div class="left">
                                 <div class="icon-container">
@@ -140,7 +153,7 @@ class ProjectCard extends HTMLElement {
                                 <p class="description">$${this.budget}</p>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="info-box">
                             <div class="box-top">
                                 <div class="left">
                                 <div class="icon-container">
@@ -157,7 +170,7 @@ class ProjectCard extends HTMLElement {
                                 <p class="description">${this.duration}</p>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="info-box">
                             <div class="box-top">
                                 <div class="left">
                                     <div class="icon-container">
@@ -173,7 +186,7 @@ class ProjectCard extends HTMLElement {
                                 <div class="right">
                                 <div class="icon-container">
                                 <img
-                                    class="icon info-icon"
+                                    class="icon info-icon-2"
                                     src="assets/icons/info-icon-v2.svg"
                                     alt="item-icon"
                                 />
@@ -185,32 +198,28 @@ class ProjectCard extends HTMLElement {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="button-container">
-                    <button class="view-project primary-dark-btn">View Project</button>
-                </div>
+              </div>
+            <div class="bottom-content">
+                <p class="title">Project Overview</p>
+                <p class="description">${this.description}</p>
             </div>
-
-        </div>
-
-        ${
-          this.isActiveModal
-            ? `<project-card-detail
-            niche="${this.niche}"
-            title="${this.title}"
-            description="${this.description}"
-            detailDescription="${this.detailDescription}"
-            budget="${this.budget}"
-            duration="${this.duration}"
-            people="${this.people}"
-            peopleDescription="${this.peopleDescription}"
-            coverUrl="${this.coverUrl}"
-            videoUrl="${this.videoUrl}" />`
-            : ``
-        }
+          </div>
+          <div class="bottom-container">
+            <div class="top">
+              <video class="project-detail-video" controls muted playsInline>
+                  <source src="assets/videos/${this.videoUrl}.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="bottom">
+              <p class="title">About Mystery Monks</p>
+              <p class="description">${this.detailDescription}</p>
+            </div>
+          </div>
+      </div> 
+    </div>
     `
   }
 }
 
-customElements.define('project-card', ProjectCard)
+customElements.define('project-card-detail', ProjectCardDetail)

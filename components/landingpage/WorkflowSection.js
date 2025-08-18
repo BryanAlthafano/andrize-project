@@ -139,12 +139,12 @@ class WorkflowSection extends HTMLElement {
         // play when 80% of video is visible
         if (visibleRatio >= 0.8) {
           if (video.paused) {
-            console.log('play')
+            // console.log('play')
             video.play().catch(() => {})
           }
         } else {
           if (!video.paused) {
-            console.log('paused')
+            // console.log('paused')
             video.pause()
           }
         }

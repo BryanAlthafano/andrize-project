@@ -13,48 +13,60 @@ class PreviewProjectSection extends HTMLElement {
         title: 'Ad Video Series for Premium Furniture Brand',
         description:
           'A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer.',
+        detail_description:
+          'Mystery Monks is more than just a video ad agency; we’re a platform that connects businesses with top-tier creative talent. Our carefully curated packages, managed by skilled creative directors like Pallavi Varma, ensure that each project meets the highest standards. With MM Studio, clients have the freedom to choose the creative director that best fits their vision, guaranteeing a personalized and professional video production experience.',
         niche: 'Digital Marketing',
         budget: '950',
         duration: '1.5 Week',
         people: '2',
         people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
-        url: 'project-cover-1'
+        url: 'project-cover-1',
+        videoUrl: 'video-1-v2'
       },
       {
         id: 2,
         title: 'Social Media Campaign for AK Global Dent',
         description:
           'A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer.',
+        detail_description:
+          'Mystery Monks is more than just a video ad agency; we’re a platform that connects businesses with top-tier creative talent. Our carefully curated packages, managed by skilled creative directors like Pallavi Varma, ensure that each project meets the highest standards. With MM Studio, clients have the freedom to choose the creative director that best fits their vision, guaranteeing a personalized and professional video production experience.',
         niche: 'Digital Marketing',
         budget: '950',
         duration: '1.5 Week',
         people: '2',
         people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
-        url: 'project-cover-2'
+        url: 'project-cover-2',
+        videoUrl: 'video-1-v2'
       },
       {
         id: 3,
         title: 'Emotive Video Ad for Kidzee Preschool',
         description:
           'A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer.',
+        detail_description:
+          'Mystery Monks is more than just a video ad agency; we’re a platform that connects businesses with top-tier creative talent. Our carefully curated packages, managed by skilled creative directors like Pallavi Varma, ensure that each project meets the highest standards. With MM Studio, clients have the freedom to choose the creative director that best fits their vision, guaranteeing a personalized and professional video production experience.',
         niche: 'Digital Marketing',
         budget: '950',
         duration: '1.5 Week',
         people: '2',
         people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
-        url: 'project-cover-3'
+        url: 'project-cover-3',
+        videoUrl: 'video-1-v2'
       },
       {
         id: 4,
         title: 'Emotive Video Ad for Kidzee Preschool',
         description:
           'A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer.',
+        detail_description:
+          'Mystery Monks is more than just a video ad agency; we’re a platform that connects businesses with top-tier creative talent. Our carefully curated packages, managed by skilled creative directors like Pallavi Varma, ensure that each project meets the highest standards. With MM Studio, clients have the freedom to choose the creative director that best fits their vision, guaranteeing a personalized and professional video production experience.',
         niche: 'Digital Marketing',
         budget: '950',
         duration: '1.5 Week',
         people: '2',
         people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
-        url: 'project-cover-4'
+        url: 'project-cover-4',
+        videoUrl: 'video-1-v2'
       }
     ]
   }
@@ -146,11 +158,13 @@ class PreviewProjectSection extends HTMLElement {
                         niche="${project?.niche}"
                         title="${project?.title}"
                         description="${project?.description}"
+                        detailDescription="${project?.detail_description}"
                         budget="${project?.budget}"
                         duration="${project?.duration}"
                         people="${project?.people}"
                         peopleDescription="${project?.people_description}"
-                        coverUrl="${project?.url}"></project-card>`
+                        coverUrl="${project?.url}"
+                        videoUrl="${project?.videoUrl}"></project-card>`
                       })
                       .join('')}
                   </div>

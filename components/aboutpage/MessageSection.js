@@ -19,6 +19,8 @@ class MessageSection extends HTMLElement {
             elRetry.scrollIntoView({ behavior: 'smooth' })
           }
         }, 500)
+      } else {
+        window.location.href = page
       }
     } else {
       const url = id ? `${page}?scrollTo=${id}` : `${page}`
