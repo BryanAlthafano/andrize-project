@@ -20,13 +20,8 @@ class CustomFooter extends HTMLElement {
 
     if (currentPage === page || currentPage === '' || currentPage === '/') {
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-      } else if (id) {
         setTimeout(() => {
-          const elRetry = document.getElementById(id)
-          if (elRetry) {
-            elRetry.scrollIntoView({ behavior: 'smooth' })
-          }
+          el.scrollIntoView({ behavior: 'smooth' })
         }, 500)
       } else {
         window.location.href = page
