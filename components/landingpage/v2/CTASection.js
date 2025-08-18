@@ -1,29 +1,40 @@
 class CTASection extends HTMLElement {
-  connectedCallback() {
-    this.render();
-    this.attachEvents();
+  static get observedAttributes () {
+    return ['with-margin-top']
   }
 
-  attachEvents() {
+  connectedCallback () {
+    this.render()
+    this.attachEvents()
+  }
+
+  // get attribute for custom margin top
+  get withMarginTop () {
+    return this.getAttribute('with-margin-top') || ''
+  }
+
+  attachEvents () {
     // function for post project button
-    this.attachEventPostProjectButton();
+    this.attachEventPostProjectButton()
   }
 
-  attachEventPostProjectButton() {
-    const postBtn = this.querySelector('.cta-post-project-button');
+  attachEventPostProjectButton () {
+    const postBtn = this.querySelector('.cta-post-project-button')
 
     postBtn.addEventListener('click', () => {
-      window.location.href = 'post-project.html';
-    });
+      window.location.href = 'post-project.html'
+    })
   }
 
-  render() {
-    this.innerHTML = this.getTemplate();
+  render () {
+    this.innerHTML = this.getTemplate()
   }
 
-  getTemplate() {
+  getTemplate () {
     return `
-          <section class="cta-v2-wrap padding-each-section spacing-beween-section">
+          <section class="cta-v2-wrap padding-each-section ${
+            this.withMarginTop !== '' ? 'spacing-beween-section' : ''
+          }">
               <div class="cta-v2-container">
                 <div class="text-container">
                     <p class="text">Hire a manager to build your team and <span class="highlight">get it done.</span></p>
@@ -37,8 +48,8 @@ class CTASection extends HTMLElement {
                 </div>
               </div>
           </section>
-      `;
+      `
   }
 }
 
-customElements.define('cta-section', CTASection);
+customElements.define('cta-section', CTASection)

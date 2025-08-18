@@ -10381,7 +10381,11 @@ body.modal-open {
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    margin-bottom: 60px;
 
+    @media (min-width: 0px) and (max-width: 750px) {
+      margin-bottom: 48px;
+    }
 
     .show-more-btn {
       width: 220px;
@@ -10398,6 +10402,14 @@ body.modal-open {
     .show-more-btn:hover {
       background-color: transparent;
     }
+  }
+}
+
+.project-list-footer-space-top {
+  margin-top: 60px;
+
+  @media (min-width: 0px) and (max-width: 750px) {
+    margin-top: 48px;
   }
 }
 
