@@ -10310,8 +10310,6 @@ body.modal-open {
     gap: 32px;
   }
 
-
-
   .filter-list {
     display: flex;
     flex-direction: row;
@@ -10367,8 +10365,8 @@ body.modal-open {
       max-width: calc(100% - 10px);
 
       @media (min-width: 750px) and (max-width: 1200px) {
-        flex: 0 0 calc(50% - 10px - 10px);
-        max-width: calc(50% - 10px - 10px);
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
       }
 
       @media (min-width: 1200px) {
