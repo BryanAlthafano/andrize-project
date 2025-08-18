@@ -10130,7 +10130,7 @@ body.modal-open {
           border: solid 1px var(--purple-200);
           padding: 4px 12px;
           color: var(--purple-950);
-          font-weight: 500;
+          font-weight: 400;
           font-size: 14px;
           line-height: 24px;
         }
@@ -10281,7 +10281,7 @@ body.modal-open {
         border-radius: 12px;
         border: solid 1px var(--purple-600);
         color: var(--purple-800);
-        font-weight: 500;
+        font-weight: 400;
         font-size: 16px;
         line-height: 20px;
         background-color: transparent;
