@@ -18,7 +18,8 @@ class ProjectListSection extends HTMLElement {
         budget: '950',
         duration: '1.5 Week',
         people: '2',
-        people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
+        people_description:
+          'Tech Manager, Designer, Marketer, Developer, Animator & Scriptwriter.',
         url: 'project-cover-1',
         videoUrl: 'video-1-v2'
       },
@@ -33,7 +34,8 @@ class ProjectListSection extends HTMLElement {
         budget: '950',
         duration: '1.5 Week',
         people: '2',
-        people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
+        people_description:
+          'Tech Manager, Designer, Marketer, Developer, Animator & Scriptwriter.',
         url: 'project-cover-2',
         videoUrl: 'video-1-v2'
       },
@@ -48,7 +50,8 @@ class ProjectListSection extends HTMLElement {
         budget: '950',
         duration: '1.5 Week',
         people: '2',
-        people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
+        people_description:
+          'Tech Manager, Designer, Marketer, Developer, Animator & Scriptwriter.',
         url: 'project-cover-3',
         videoUrl: 'video-1-v2'
       },
@@ -63,7 +66,8 @@ class ProjectListSection extends HTMLElement {
         budget: '950',
         duration: '1.5 Week',
         people: '2',
-        people_description: 'Tech Manager, Designer, Full-Stack Dev, QA',
+        people_description:
+          'Tech Manager, Designer, Marketer, Developer, Animator & Scriptwriter.',
         url: 'project-cover-4',
         videoUrl: 'video-1-v2'
       }
