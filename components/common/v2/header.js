@@ -177,7 +177,7 @@ class CustomHeader extends HTMLElement {
         <div class="mobile-sidebar-container">
           <ul class="sidebar-menu-list">
               <li><a href="#" data-page="solution.html" data-scroll-to="">How It Works</a></li>
-              <li><a href="#" data-page="contact.html" data-scroll-to="ourContactId">Contact Us</a></li>
+              <li><a href="#" data-page="contact.html" data-scroll-to="">Contact Us</a></li>
               <li><a href="#" data-page="about.html" data-scroll-to="">About Us</a></li>
           </ul>
           <button class="login-button" data-page="join.html" data-scroll-to="">

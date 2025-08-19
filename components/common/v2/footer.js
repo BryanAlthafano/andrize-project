@@ -91,7 +91,7 @@ class CustomFooter extends HTMLElement {
                             <li><a href="#" data-page="solution.html" data-scroll-to="">How It Works</a></li>
                             <li><a href="#" data-page="project-list.html" data-scroll-to="">Project Showcase</a></li> 
                             <li><a href="#" data-page="about.html" data-scroll-to="">About us </a></li>
-                            <li><a href="#" data-page="contact.html" data-scroll-to="ourContactId">Contact us</a></li>
+                            <li><a href="#" data-page="contact.html" data-scroll-to="">Contact us</a></li>
                         </ul>
                     </div>
                     <div class="contact-container">
