@@ -5,12 +5,23 @@ class CustomFooter extends HTMLElement {
 
   connectedCallback () {
     this.render()
+    this.setRealHref()
     this.attachEvents()
   }
 
   // get attribute for custom margin top
   get withMarginTop () {
     return this.getAttribute('with-margin-top') || ''
+  }
+
+  isNormalClick (e) {
+    return (
+      e.button === 0 && // left click
+      !e.ctrlKey &&
+      !e.metaKey && // no ctrl/cmd
+      !e.shiftKey &&
+      !e.altKey // no modifier
+    )
   }
 
   // function for change page and scroll to element
@@ -32,14 +43,24 @@ class CustomFooter extends HTMLElement {
     }
   }
 
-  // get custom attribute for scroll to element
+  setRealHref () {
+    this.querySelectorAll('[data-scroll-to]').forEach(link => {
+      const id = link.getAttribute('data-scroll-to')
+      const page = link.getAttribute('data-page')
+      link.setAttribute('href', id ? `${page}?scrollTo=${id}` : page)
+    })
+  }
+
   attachEvents () {
+    // get custom attribute for scroll to element
     this.querySelectorAll('[data-scroll-to]').forEach(link => {
       link.addEventListener('click', e => {
-        e.preventDefault()
-        const id = link.getAttribute('data-scroll-to')
-        const page = link.getAttribute('data-page')
-        this.scrollToSection(id, page)
+        if (this.isNormalClick(e)) {
+          e.preventDefault()
+          const id = link.getAttribute('data-scroll-to')
+          const page = link.getAttribute('data-page')
+          this.scrollToSection(id, page)
+        }
       })
     })
   }

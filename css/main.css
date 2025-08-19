@@ -8114,6 +8114,7 @@ body.modal-open {
 
     .logo-container {
       align-self: center;
+      cursor: pointer;
 
       .logo-img {
         width: 123px;

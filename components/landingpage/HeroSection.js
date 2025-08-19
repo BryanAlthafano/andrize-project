@@ -1,6 +1,7 @@
 class HeroSection extends HTMLElement {
   connectedCallback () {
     this.render()
+    this.setRealHref()
     this.attachEvents()
   }
 
@@ -23,6 +24,14 @@ class HeroSection extends HTMLElement {
     }
   }
 
+  setRealHref () {
+    this.querySelectorAll('[data-scroll-to]').forEach(link => {
+      const id = link.getAttribute('data-scroll-to')
+      const page = link.getAttribute('data-page')
+      link.setAttribute('href', id ? `${page}?scrollTo=${id}` : page)
+    })
+  }
+
   attachEvents () {
     // function for scroll to element
     this.attachEventScrollElement()
@@ -35,10 +44,12 @@ class HeroSection extends HTMLElement {
     // get custom attribute for scroll to element
     this.querySelectorAll('[data-scroll-to]').forEach(link => {
       link.addEventListener('click', e => {
-        e.preventDefault()
-        const id = link.getAttribute('data-scroll-to')
-        const page = link.getAttribute('data-page')
-        this.scrollToSection(id, page)
+        if (this.isNormalClick(e)) {
+          e.preventDefault()
+          const id = link.getAttribute('data-scroll-to')
+          const page = link.getAttribute('data-page')
+          this.scrollToSection(id, page)
+        }
       })
     })
   }

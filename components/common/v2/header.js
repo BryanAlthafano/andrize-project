@@ -5,12 +5,23 @@ class CustomHeader extends HTMLElement {
 
   connectedCallback () {
     this.render()
+    this.setRealHref()
     this.attachEvents()
   }
 
   get headerTheme () {
     // get attribute for custom header theme
     return this.getAttribute('theme') || 'light'
+  }
+
+  isNormalClick (e) {
+    return (
+      e.button === 0 && // left click
+      !e.ctrlKey &&
+      !e.metaKey && // no ctrl/cmd
+      !e.shiftKey &&
+      !e.altKey // no modifier
+    )
   }
 
   render () {
@@ -26,16 +37,29 @@ class CustomHeader extends HTMLElement {
 
     // function button post project
     this.attachEventPostProjectButton()
+
+    // function logo
+    this.attachEventLogo()
+  }
+
+  setRealHref () {
+    this.querySelectorAll('[data-scroll-to]').forEach(link => {
+      const id = link.getAttribute('data-scroll-to')
+      const page = link.getAttribute('data-page')
+      link.setAttribute('href', id ? `${page}?scrollTo=${id}` : page)
+    })
   }
 
   attachEventScrollToElement () {
     // get custom attribute for scroll to element and menu button logic
     this.querySelectorAll('[data-scroll-to]').forEach(link => {
       link.addEventListener('click', e => {
-        e.preventDefault()
-        const id = link.getAttribute('data-scroll-to')
-        const page = link.getAttribute('data-page')
-        this.scrollToSection(id, page)
+        if (this.isNormalClick(e)) {
+          e.preventDefault()
+          const id = link.getAttribute('data-scroll-to')
+          const page = link.getAttribute('data-page')
+          this.scrollToSection(id, page)
+        }
       })
     })
   }
@@ -55,6 +79,14 @@ class CustomHeader extends HTMLElement {
 
     postBtn.addEventListener('click', () => {
       window.location.href = 'post-project.html'
+    })
+  }
+
+  attachEventLogo () {
+    const postBtn = this.querySelector('.logo-container')
+
+    postBtn.addEventListener('click', () => {
+      window.location.href = 'index.html'
     })
   }
 
