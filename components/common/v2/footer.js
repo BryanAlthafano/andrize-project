@@ -67,7 +67,7 @@ class CustomFooter extends HTMLElement {
                     <div class="service-container">
                         <p class="heading">Quick Links</p>
                         <ul class="service-list">
-                            <li><a href="#" data-page="index.html" data-scroll-to="workflowId">How It Works</a></li>
+                            <li><a href="#" data-page="solution.html" data-scroll-to="">How It Works</a></li>
                             <li><a href="#" data-page="project-list.html" data-scroll-to="">Project Showcase</a></li> 
                             <li><a href="#" data-page="about.html" data-scroll-to="">About us </a></li>
                             <li><a href="#" data-page="contact.html" data-scroll-to="ourContactId">Contact us</a></li>

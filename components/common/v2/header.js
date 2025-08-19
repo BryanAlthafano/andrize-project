@@ -102,7 +102,7 @@ class CustomHeader extends HTMLElement {
           </div>
           <div class="menu-list-container">
             <ul class="menu">
-              <li><a href="#" data-page="index.html" data-scroll-to="workflowId">How It Works</a></li>
+              <li><a href="#" data-page="solution.html" data-scroll-to="">How It Works</a></li>
               <li><a href="#" data-page="project-list.html" data-scroll-to="">Project Showcase</a></li>
             </ul>
           </div>
@@ -144,7 +144,7 @@ class CustomHeader extends HTMLElement {
       }"> 
         <div class="mobile-sidebar-container">
           <ul class="sidebar-menu-list">
-              <li><a href="#" data-page="index.html" data-scroll-to="workflowId">How It Works</a></li>
+              <li><a href="#" data-page="solution.html" data-scroll-to="">How It Works</a></li>
               <li><a href="#" data-page="contact.html" data-scroll-to="ourContactId">Contact Us</a></li>
               <li><a href="#" data-page="about.html" data-scroll-to="">About Us</a></li>
           </ul>
