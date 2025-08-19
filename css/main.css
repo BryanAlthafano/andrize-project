@@ -10688,7 +10688,7 @@ body.modal-open {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  text-align: center;
+  text-align: justify;
   z-index: 9999 !important;
 }
 
