@@ -10189,6 +10189,10 @@ body.modal-open {
         flex-direction: row;
         gap: 13px;
 
+        @media (min-width: 0px) and (max-width: 410px) {
+          gap: 8px;
+        }
+
         .box {
           display: flex;
           flex-direction: column;
@@ -10197,6 +10201,11 @@ body.modal-open {
           gap: 8px;
           border: solid 1px var(--natural-300);
           width: calc((100% - (2 * 13px)) / 3);
+
+          @media (min-width: 0px) and (max-width: 410px) {
+            width: calc((100% - (2 * 8px)) / 3);
+            padding: 6px;
+          }
 
           .box-top {
             display: flex;
@@ -10222,6 +10231,11 @@ body.modal-open {
                     width: 17px;
                     height: 17px;
                   }
+
+                  @media (min-width: 0px) and (max-width: 410px) {
+                    width: 18px;
+                    height: 18px;
+                  }
                 }
               }
 
@@ -10235,6 +10249,10 @@ body.modal-open {
                 @media (min-width: 750px) and (max-width: 950px) {
                   font-size: 12px;
                   line-height: 20px;
+                }
+
+                @media (min-width: 0px) and (max-width: 410px) {
+                  font-size: 12px;
                 }
               }
             }
