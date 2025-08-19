@@ -78,7 +78,7 @@ class ProjectCard extends HTMLElement {
         arrow: false,
         offset: [10, -18],
         hideOnClick: true,
-        maxWidth: 180,
+        maxWidth: 225,
         content: this.peopleDescription
       })
     })
