@@ -10616,7 +10616,7 @@ body.modal-open {
           font-weight: 400;
           font-size: 72px;
           line-height: 90px;
-          letter-spacing: -2%;
+          letter-spacing: -0.2px;
           color: var(--purple-950);
           width: 60%;
 
@@ -10711,7 +10711,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     border-radius: 24px;
-    height: 75vh;
+    height: 90vh;
     box-sizing: border-box;
     overflow-y: hidden;
 
@@ -10755,7 +10755,7 @@ body.modal-open {
               font-weight: 400;
               font-size: 36px;
               line-height: 44px;
-              letter-spacing: -2%;
+              letter-spacing: -0.2px;
               margin: 0;
               padding: 0;
 
@@ -10766,26 +10766,37 @@ body.modal-open {
               }
 
               @media (min-width: 750px) and (max-width: 1100px) {
-                font-size: 38px;
+                font-size: 33px;
                 line-height: 40px;
                 letter-spacing: normal;
               }
             }
 
-            button.close-btn {
-              background-color: var(--purple-50);
-              border: solid 1.14px var(--purple-100);
-              border-radius: 999px;
-              width: 32px;
-              height: 32px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              cursor: pointer;
+            .close-btn-container {
+              button.close-btn {
+                background-color: var(--purple-50);
+                border: solid 1.14px var(--purple-100);
+                border-radius: 999px;
+                width: 32px;
+                height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-top: 6px;
 
-              p.close {
-                font-size: 24px;
-                color: var(--purple-900);
+                @media (min-width: 0px) and (max-width: 750px) {
+                  margin-top: 4px;
+                }
+
+                @media (min-width: 750px) and (max-width: 1100px) {
+                  margin-top: 4px;
+                }
+
+                img.project-detail-close-icon {
+                  width: 20px;
+                  height: 20px;
+                }
               }
             }
           }
@@ -10817,7 +10828,7 @@ body.modal-open {
                   border: solid 1px var(--purple-200);
                   padding: 4px 12px;
                   color: var(--purple-950);
-                  font-weight: 500;
+                  font-weight: 400;
                   font-size: 14px;
                   line-height: 24px;
                 }
@@ -11015,16 +11026,16 @@ body.modal-open {
 
       /* custom scrollbar */
       &::-webkit-scrollbar {
-        width: 12px;
+        width: 6px;
       }
 
       &::-webkit-scrollbar-track {
-        background-color: #E8E8E8;
+        background-color: rgba(0, 0, 0, 0.05);
         margin-right: 20px;
       }
 
       &::-webkit-scrollbar-thumb {
-        background: #979797;
+        background-color: rgba(0, 0, 0, 0.1);
         border-radius: 100px;
       }
 

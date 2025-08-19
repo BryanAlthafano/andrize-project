@@ -79,6 +79,9 @@ class ProjectCardDetail extends HTMLElement {
 
     // handle close button
     this.attachEventCloseButton()
+
+    // handle click outside
+    this.attachEventOverlay()
   }
 
   attachEventTooltip () {
@@ -109,6 +112,20 @@ class ProjectCardDetail extends HTMLElement {
     })
   }
 
+  attachEventOverlay () {
+    // klik overlay -> close
+    this.modalEl.addEventListener('click', e => {
+      if (e.target === this.modalEl) {
+        this.dispatchEvent(
+          new CustomEvent('modal-closed', {
+            bubbles: true,
+            detail: 'closed'
+          })
+        )
+      }
+    })
+  }
+
   getTemplate () {
     return ` 
     <div class="box">
@@ -118,9 +135,9 @@ class ProjectCardDetail extends HTMLElement {
               <div class="top">
                 <div class="header">
                   <p class="title">${this.title}</p>
-                  <div>
-                    <button class="close-btn">
-                      <p class="close">&times;</p>
+                  <div class="close-btn-container">
+                    <button class="close-btn"> 
+                      <img alt="project-detail-close-icon" class="project-detail-close-icon" src="assets/icons/project-detail-close-icon.svg">
                     </button>
                   </div>
                 </div>
