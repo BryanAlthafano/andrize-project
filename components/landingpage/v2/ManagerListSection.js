@@ -13,42 +13,42 @@ class ManagerListSection extends HTMLElement {
         quote: `I specialize in building scalable websites and custom web tools for growing startups and D2C brands. I've worked with teams across India, U...`,
         author: 'Dev Anthony',
         role: 'eCommerce Websites, Web Apps',
-        author_photo_profile: 'photo-profile-4'
+        author_photo_profile: 'manager-profile-1'
       },
       {
         id: 2,
         quote: `Directed 60+ video projects for brands like FWD Furniture, Kidzee, and LoopLabs. Expert in creating engaging explainer videos that conver...`,
         author: 'Pallavi Varma',
         role: 'Creative Director – Explainer Videos',
-        author_photo_profile: 'photo-profile-5'
+        author_photo_profile: 'manager-profile-2'
       },
       {
         id: 3,
         quote: `Full-stack mobile developer with 8+ years experience in React Native and Flutter. Built apps for fintech, healthcare, and e-learning...`,
         author: 'Rajesh Kumar',
         role: 'Mobile App Development',
-        author_photo_profile: 'photo-profile-6'
+        author_photo_profile: 'manager-profile-3'
       },
       {
         id: 4,
         quote: `10+ years in creative strategy. Led digital campaigns for lifestyle brands and e-commerce startups. Focused on storytelling that sells.`,
         author: 'Sneha Kapoor',
         role: 'Brand Strategy, Digital Campaigns',
-        author_photo_profile: 'photo-profile-7'
+        author_photo_profile: 'manager-profile-4'
       },
       {
         id: 5,
         quote: `Built AI-driven tools for lead generation and support automation. Expert in GPT integrations and workflow design.`,
         author: 'Amit Singh',
         role: 'AI Tools, Automation',
-        author_photo_profile: 'photo-profile-8'
+        author_photo_profile: 'manager-profile-5'
       },
       {
         id: 6,
         quote: `Conversion-focused designer. Created 100+ landing pages for SaaS, coaching, and product launches. Fluent in Webflow and Figma.`,
         author: 'Natasha Mehra',
         role: 'Landing Pages, Funnel Design',
-        author_photo_profile: 'photo-profile-9'
+        author_photo_profile: 'manager-profile-6'
       }
     ]
   }
@@ -152,7 +152,7 @@ class ManagerListSection extends HTMLElement {
                           <div class="photo-profile">
                             <img
                               class='photo-profile'
-                              src='assets/images/${manager?.author_photo_profile}.svg'
+                              src='assets/images/${manager?.author_photo_profile}.png'
                               alt='photo-profile'
                             />
                           </div>
