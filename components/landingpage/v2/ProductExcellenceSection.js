@@ -46,7 +46,7 @@ class ProductExcellenceSection extends HTMLElement {
                     .map(product => {
                       return `
                       <div class="card-container">
-                          <img alt="product-excellence-vector-1" src="assets/images/${product?.vector}.svg" class="product-excellence-vector"/>
+                          <img alt="product-excellence-vector-1" src="assets/images/${product?.vector}.png" class="product-excellence-vector"/>
                         <div class="card-content" data-key="${product?.id}">
                           <p class="title">${product?.title}</p>
                           <p class="description">${product?.description}</p>
