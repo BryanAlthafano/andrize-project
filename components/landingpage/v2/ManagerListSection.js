@@ -154,6 +154,7 @@ class ManagerListSection extends HTMLElement {
                               class='photo-profile'
                               src='assets/images/${manager?.author_photo_profile}.png'
                               alt='photo-profile'
+                              loading="lazy"
                             />
                           </div>
                           <div class='user-container'>

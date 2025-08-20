@@ -146,6 +146,7 @@ class FeedbackSection extends HTMLElement {
                                     class="quote-item-icon"
                                     src="assets/icons/quote-icon.svg"
                                     alt="quote-item-icon"
+                                    loading="lazy"
                                 />
                             </div>
                         <p class="text">${testi?.quote}</p>
@@ -156,6 +157,7 @@ class FeedbackSection extends HTMLElement {
                               class='photo-profile'
                               src='assets/images/${testi?.author_photo_profile}.webp'
                               alt='photo-profile'
+                              loading="lazy"
                             />
                           </div>
                           <div class='user-container'>

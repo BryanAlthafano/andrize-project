@@ -143,7 +143,7 @@ class ProjectCardDetail extends HTMLElement {
                 </div>
 
                 <div class="cover-container">
-                  <img alt="cover" class="cover-card" src="assets/images/${this.coverUrl}.jpg">
+                  <img alt="cover" class="cover-card" loading="lazy" src="assets/images/${this.coverUrl}.jpg">
                   <div class="cover-content">
                       <div class="niche-container">
                           <p class="niche">${this.niche}</p>

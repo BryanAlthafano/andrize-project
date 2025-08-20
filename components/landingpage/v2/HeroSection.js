@@ -87,7 +87,7 @@ class HeroSection extends HTMLElement {
                     </p>
 
                     <div class="image-mobile-container">
-                      <img alt="hero-img-mobile-img" src="assets/images/hero-img-mobile-v2.jpg" class="hero-img-mobile-img"/>
+                      <img alt="hero-img-mobile-img" src="assets/images/hero-img-mobile-v2.png" class="hero-img-mobile-img" loading="lazy"/>
                     </div>
 
                     <p class="description">From AI tools to explainer videos, landing pages to brand campaigns—your ideas, delivered by expert-led freelance teams.</p>
@@ -102,7 +102,7 @@ class HeroSection extends HTMLElement {
               </div>
 
               <div class="right-side"> 
-                <img alt="right-side-img" src="assets/images/hero-img-v2.jpg" class="right-side-img"/>
+                <img alt="right-side-img" src="assets/images/hero-img-v2.png" class="right-side-img" loading="lazy"/>
               </div>
             </div>
         </section>

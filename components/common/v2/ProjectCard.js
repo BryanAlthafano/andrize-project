@@ -106,7 +106,7 @@ class ProjectCard extends HTMLElement {
     return `        
         <div class="project-card">
             <div class="top-container">
-                <img alt="cover" class="cover-card" src="assets/images/${
+                <img alt="cover" class="cover-card" loading="lazy" src="assets/images/${
                   this.coverUrl
                 }.jpg">
                 <div class="cover-content">
