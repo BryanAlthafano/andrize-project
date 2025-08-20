@@ -98,7 +98,57 @@ class HeroSection extends HTMLElement {
                       </button>
                   </div>
                 </div>
-                                
+                
+                <div class="bottom-content">
+                  <p class="partner-heading">Trusted by Forward Thinking Teams</p>
+
+                  <div class="logo-carousel-wrapper">
+                    <div class="logo-carousel">
+                      <img
+                        class="logo"
+                        src="assets/images/logo-acme-v2.svg"
+                        alt="logo-icon-1"
+                        />
+                      <img
+                        class="logo"
+                        src="assets/images/logo-globex-v2.svg"
+                        alt="logo-icon-2"
+                      />
+                      <img
+                        class="logo"
+                        src="assets/images/logo-umbrella-v2.svg"
+                        alt="logo-icon-3"
+                      />
+                      <img
+                        class="logo"
+                        src="assets/images/logo-hooli-v2.svg"
+                        alt="logo-icon-4"
+                      />
+
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-acme-v2.svg"
+                        alt="logo-icon-1"
+                        />
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-globex-v2.svg"
+                        alt="logo-icon-2"
+                      />
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-umbrella-v2.svg"
+                        alt="logo-icon-3"
+                      />
+                      <img
+                        class="logo logo-2"
+                        src="assets/images/logo-hooli-v2.svg"
+                        alt="logo-icon-4"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
               </div>
 
               <div class="right-side"> 
