@@ -10,25 +10,50 @@ class FeedbackSection extends HTMLElement {
       {
         id: 1,
         quote:
-          '“It felt like I hired a mini agency on demand—without the headache.”',
-        author: 'Jane Mehta',
-        role: 'Founder, HealthByte',
-        author_photo_profile: 'photo-profile-1'
+          '“Okay, I was super stressed about getting our app done—too many moving parts! But our AndRize manager just… handled it. Like, picked the team, kept it on track, and we launched early. It’s honestly kinda unreal.”',
+        author: 'Sophia Martinez',
+        role: 'GrowPulse Analytics',
+        author_photo_profile: 'testi-photo-profile-1'
       },
       {
         id: 2,
-        quote: '“One manager pulled in the right team and delivered fast.”',
-        author: 'Ankit Rao',
-        role: 'Growth Lead, LoopLabs',
-        author_photo_profile: 'photo-profile-2'
+        quote:
+          '“We got a landing page, explainer video, and ad creatives done in one go. It honestly felt like hiring a small agency, but without the layers and cost”',
+        author: 'Neeraj Sinha',
+        role: 'Bluefox AI',
+        author_photo_profile: 'testi-photo-profile-2'
       },
       {
         id: 3,
         quote:
-          '“I didn’t need to search for freelancers or coordinate anything. The manager just got it—and delivered better than expected. It felt like I hired a mini agency on demand—without the headache. “One manager pulled in the right team and delivered fast.”',
-        author: 'Rohan Malhotra',
-        role: 'Marketing Head, QuickTask App',
-        author_photo_profile: 'photo-profile-3'
+          '“Our wellness campaign had to feel real, not fake and salesy. I was nervous, but our manager got it right away. They ran everything, picked a great crew, and I didn’t have to babysit. Came out better than I hoped!”',
+        author: 'Amara Singh',
+        role: 'MindSpring Wellness',
+        author_photo_profile: 'testi-photo-profile-3'
+      },
+      {
+        id: 4,
+        quote:
+          '“We needed a product demo video quickly. The project manager found the right people, set the timeline, and the final result was exactly what we hoped for.”',
+        author: 'Javier Torres',
+        role: 'Corelia Systems',
+        author_photo_profile: 'testi-photo-profile-4'
+      },
+      {
+        id: 5,
+        quote:
+          '“I had this big branding idea but no time to chase people down. Our AndRize manager was like, ‘I got this,’ and they did! It looks amazing. Zero stress for me.”',
+        author: 'Nia Patel',
+        role: 'Brightscale Ventures',
+        author_photo_profile: 'testi-photo-profile-5'
+      },
+      {
+        id: 6,
+        quote:
+          '“What I liked most was having one point of contact. No chasing, no confusion — just one manager making sure everything came together. The previous agency that we worked with made us talk to different people to get our project done”',
+        author: 'Ethan Kim',
+        role: 'ForwardWorks',
+        author_photo_profile: 'testi-photo-profile-6'
       }
     ]
   }
@@ -129,7 +154,7 @@ class FeedbackSection extends HTMLElement {
                           <div class="photo-profile">
                             <img
                               class='photo-profile'
-                              src='assets/images/${testi?.author_photo_profile}.svg'
+                              src='assets/images/${testi?.author_photo_profile}.webp'
                               alt='photo-profile'
                             />
                           </div>
