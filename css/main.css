@@ -8718,6 +8718,7 @@ body.modal-open {
         border-radius: 16px;
         max-height: 100%;
         display: block;
+        object-fit: cover;
       }
     }
   }
