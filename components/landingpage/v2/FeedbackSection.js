@@ -25,7 +25,7 @@ class FeedbackSection extends HTMLElement {
       {
         id: 3,
         quote:
-          '“I didn’t need to search for freelancers or coordinate anything. The manager just got it—and delivered better than expected.”',
+          '“I didn’t need to search for freelancers or coordinate anything. The manager just got it—and delivered better than expected. It felt like I hired a mini agency on demand—without the headache. “One manager pulled in the right team and delivered fast.”',
         author: 'Rohan Malhotra',
         role: 'Marketing Head, QuickTask App',
         author_photo_profile: 'photo-profile-3'
