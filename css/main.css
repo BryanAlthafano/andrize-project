@@ -9665,7 +9665,7 @@ body.modal-open {
             height: 40px;
             font-size: 22px;
             font-weight: 600;
-            border: solid 1px var(--purple-200)
+            border: solid 1px var(--purple-200);
           }
         }
 
@@ -9700,7 +9700,7 @@ body.modal-open {
             height: 40px;
             font-size: 22px;
             font-weight: 600;
-            border: solid 1px var(--purple-200)
+            border: solid 1px var(--purple-200);
           }
         }
 
