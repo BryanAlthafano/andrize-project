@@ -40,6 +40,9 @@ class CustomHeader extends HTMLElement {
 
     // function logo
     this.attachEventLogo()
+
+    // handle click outside
+    this.attachEventOverlay()
   }
 
   setRealHref () {
@@ -87,6 +90,26 @@ class CustomHeader extends HTMLElement {
 
     postBtn.addEventListener('click', () => {
       window.location.href = 'index.html'
+    })
+  }
+
+  attachEventOverlay () {
+    document.addEventListener('click', e => {
+      const sidebar = this.querySelector('.mobile-sidebar')
+      const sidebarContainer = this.querySelector('.mobile-sidebar-container')
+      const menuBtn = this.querySelector('.menu-button')
+
+      const isClickInsideSidebar = sidebarContainer.contains(e.target)
+      const isClickMenuBtn = menuBtn.contains(e.target)
+
+      if (
+        !isClickInsideSidebar &&
+        !isClickMenuBtn &&
+        sidebar.classList.contains('active')
+      ) {
+        sidebar.classList.remove('active')
+        menuBtn.classList.remove('active')
+      }
     })
   }
 

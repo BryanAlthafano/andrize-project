@@ -113,7 +113,7 @@ class ProjectCardDetail extends HTMLElement {
   }
 
   attachEventOverlay () {
-    // klik overlay -> close
+    // klik click -> close
     this.modalEl.addEventListener('click', e => {
       if (e.target === this.modalEl) {
         this.dispatchEvent(
