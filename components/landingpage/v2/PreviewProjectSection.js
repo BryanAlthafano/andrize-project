@@ -10,9 +10,10 @@ class PreviewProjectSection extends HTMLElement {
     this.projectList = [
       {
         id: 1,
-        title: 'Ad Video Series for Premium Furniture Brand',
+        title:
+          'Ad Video Series for Premium Furniture Brand asdsadsa sdad sad sa dsa dsa dsa d sa dsa',
         description:
-          'A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer.',
+          'A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer. A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer.',
         detail_description:
           'Mystery Monks is more than just a video ad agency; we’re a platform that connects businesses with top-tier creative talent. Our carefully curated packages, managed by skilled creative directors like Pallavi Varma, ensure that each project meets the highest standards. With MM Studio, clients have the freedom to choose the creative director that best fits their vision, guaranteeing a personalized and professional video production experience.',
         niche: 'Digital Marketing',
@@ -58,7 +59,7 @@ class PreviewProjectSection extends HTMLElement {
       },
       {
         id: 4,
-        title: 'Emotive Video Ad for Kidzee Preschool',
+        title: 'Emotive Video Ad',
         description:
           'A set of short, visually stunning videos created to elevate the brand presence of a premium furniture retailer.',
         detail_description:
