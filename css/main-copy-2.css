@@ -9138,20 +9138,12 @@ body.modal-open {
           border-radius: 999px;
           font-weight: 700;
           font-size: 22px;
-          transform: scaleX(-1);
+          transform: rotate(180deg);
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
-          display: flex;
-          justify-content: center;
-          align-items: center;
 
           @media (min-width: 0px) and (max-width: 750px) {
             width: 48px;
             height: 48px;
-          }
-
-          svg {
-            width: 24px;
-            height: 24px;
           }
         }
 
@@ -9174,18 +9166,10 @@ body.modal-open {
           font-size: 22px;
           cursor: pointer;
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-          display: flex;
-          justify-content: center;
-          align-items: center;
 
           @media (min-width: 0px) and (max-width: 750px) {
             width: 48px;
             height: 48px;
-          }
-
-          svg {
-            width: 24px;
-            height: 24px;
           }
         }
 
@@ -9640,11 +9624,11 @@ body.modal-open {
           font-size: 22px;
           transform: scaleX(-1);
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-          display: flex;
-          justify-content: center;
-          align-items: center;
 
           @media (min-width: 0px) and (max-width: 750px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
             font-size: 22px;
@@ -9667,7 +9651,7 @@ body.modal-open {
           pointer-events: none;
 
           @media (min-width: 0px) and (max-width: 750px) {
-            display: flex;
+            display: block;
             background-color: var(--color-white);
             color: var(--main-color);
           }
@@ -9684,22 +9668,17 @@ body.modal-open {
           font-size: 22px;
           cursor: pointer;
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-          display: flex;
-          justify-content: center;
-          align-items: center;
 
           @media (min-width: 0px) and (max-width: 750px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
             font-size: 22px;
             font-weight: 600;
             border: solid 1px var(--purple-200);
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
-          }
-
-          svg {
-            width: 24px;
-            height: 24px;
           }
         }
 
@@ -9929,22 +9908,17 @@ body.modal-open {
           font-size: 22px;
           transform: scaleX(-1);
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
-          display: flex;
-          align-items: center;
-          justify-content: center;
 
           @media (min-width: 0px) and (max-width: 750px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
             font-size: 22px;
             font-weight: 600;
             border: solid 1px var(--purple-200);
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08) !important;
-          }
-
-          svg {
-            width: 24px;
-            height: 24px;
           }
         }
 
@@ -9967,23 +9941,17 @@ body.modal-open {
           font-size: 22px;
           cursor: pointer;
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
 
           @media (min-width: 0px) and (max-width: 750px) {
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
             font-size: 22px;
             font-weight: 600;
             border: solid 1px var(--purple-200);
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
-          }
-
-          svg {
-            width: 24px;
-            height: 24px;
           }
         }
 
@@ -10138,21 +10106,12 @@ body.modal-open {
             border-radius: 999px;
             font-weight: 700;
             font-size: 22px;
-            transform: scaleX(-1);
-            ;
+            transform: rotate(180deg);
             box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             @media (min-width: 0px) and (max-width: 750px) {
               width: 48px;
               height: 48px;
-            }
-
-            svg {
-              width: 24px;
-              height: 24px;
             }
           }
 
@@ -10175,18 +10134,10 @@ body.modal-open {
             font-size: 22px;
             cursor: pointer;
             box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             @media (min-width: 0px) and (max-width: 750px) {
               width: 48px;
               height: 48px;
-            }
-
-            svg {
-              width: 24px;
-              height: 24px;
             }
           }
 
@@ -10860,7 +10811,7 @@ body.modal-open {
         .top {
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 32px;
 
           .header {
             display: flex;
@@ -11126,7 +11077,7 @@ body.modal-open {
       overflow-y: auto;
       flex: 1;
       padding: 36px;
-      gap: 16px;
+      gap: 40px;
       scrollbar-gutter: stable;
       display: flex;
       flex-direction: column;

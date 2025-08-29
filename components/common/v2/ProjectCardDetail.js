@@ -216,8 +216,7 @@ class ProjectCardDetail extends HTMLElement {
                         </div>
                     </div>
               </div>
-            <div class="bottom-content">
-                <p class="title">Project Overview</p>
+            <div class="bottom-content"> 
                 <p class="description">${this.description}</p>
             </div>
           </div>
